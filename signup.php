@@ -45,7 +45,8 @@
           <div class="col-md-7">
             <h3 style="margin-top: -33px;">Signup to <strong>Easy Home</strong></h3>
             <br />
-            <form action="#" method="post">
+
+            <form action="./process/process_signup.php" method="post">
               <div class="form-group first">
                 <label for="username">Username</label>
                 <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username"
