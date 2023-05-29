@@ -39,6 +39,12 @@
 
   <!-- page content -->
 
+  <?php
+    if(isset($_SESSION['WRONG_CLIENT_CREDENTIALS'])) {
+      echo "Sorry, wrong credentials provided!";
+    }
+  ?>
+
   <div class="d-lg-flex half">
     <div class="bg order-1 order-md-2" style="background-image: url('images/login-bg.jpg');"></div>
     <div class="contents order-2 order-md-1">
@@ -48,20 +54,23 @@
           <div class="col-md-7">
             <h3 style="margin-top: -33px;">Login to <strong>Easy Home</strong></h3>
             <br />
-            <form action="#" method="post">
+
+            <form action="./process/process_login.php" method="POST" name="c_login">
               <div class="form-group first">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username">
+                <input type="text" class="form-control" placeholder="your-email@gmail.com" id="usernameOrEmail"
+                  name="usernameOrEmail">
               </div>
-              <div class="form-group last mb-3">
+              <div class=" form-group last mb-3">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" placeholder="Your Password" id="password">
+                <input type="password" class="form-control" placeholder="Your Password" id="password" name="password">
               </div>
 
-              <div class="d-flex mb-5 align-items-center">
+              <div class=" d-flex mb-5 align-items-center">
                 <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
-                  <input type="checkbox" checked="checked" />
-                  <div class="control__indicator"></div>
+                  <input type="checkbox" checked="checked" name="rememberMe" />
+                  <div class=" control__indicator">
+                  </div>
                 </label>
                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
               </div>
@@ -87,6 +96,7 @@
   ?>
 
   <!-- ------ -->
+
 </body>
 
 </html>
