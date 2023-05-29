@@ -49,8 +49,7 @@
             <form action="./process/process_signup.php" method="post">
               <div class="form-group first">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username"
-                  name="username">
+                <input type="text" class="form-control" placeholder="Your Username" id="username" name="username">
               </div>
               <div class="form-group first">
                 <label for="email">Email</label>

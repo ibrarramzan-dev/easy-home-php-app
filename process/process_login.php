@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include('../includes/db.php');
 
   $client_username_or_email = $_POST['usernameOrEmail'];
@@ -9,13 +10,17 @@
   $results = mysqli_query($conn, $select_client_query);
 
   if(mysqli_num_rows($results) > 0) {
-    $_SESSION['client_email'] = $client_username_or_email;
+    $_SESSION['client_username'] = $client_username_or_email;
+
+    if(isset($_SESSION['WRONG_CLIENT_CREDENTIALS'])) {
+      unset($_SESSION['WRONG_CLIENT_CREDENTIALS']);
+    }
+    
 
     echo "<script>window.open('../', '_self')</script>";
   } else {
-    echo "<script>alert('Email or Password is wrong, please try again!')</script>";
+    $_SESSION['WRONG_CLIENT_CREDENTIALS'] = TRUE;
     echo "<script>window.open('../login.php', '_self')</script>";
-    // $_SESSION['WRONG_CLIENT_CREDENTIALS'] = TRUE;
 
   }
 

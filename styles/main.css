@@ -9,13 +9,16 @@ a.selected {
   color: red;
   background: #efefef;
 }
+.logo_a_navbar:hover {
+  background: none;
+}
 
 #logo {
   width: 50px;
   border-radius: 25px;
 }
 .navbar-nav > li {
-  padding-left: 70px;
+  padding-left: 20px;
   padding-right: 70px;
   font-weight: bold;
 }
@@ -417,4 +420,8 @@ hr {
   font-size: 8rem;
   color: #336699;
   line-height: 200px;
+}
+
+.error-text {
+  color: #f00;
 }

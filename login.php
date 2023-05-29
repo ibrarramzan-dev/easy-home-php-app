@@ -39,12 +39,6 @@
 
   <!-- page content -->
 
-  <?php
-    if(isset($_SESSION['WRONG_CLIENT_CREDENTIALS'])) {
-      echo "Sorry, wrong credentials provided!";
-    }
-  ?>
-
   <div class="d-lg-flex half">
     <div class="bg order-1 order-md-2" style="background-image: url('images/login-bg.jpg');"></div>
     <div class="contents order-2 order-md-1">
@@ -54,6 +48,12 @@
           <div class="col-md-7">
             <h3 style="margin-top: -33px;">Login to <strong>Easy Home</strong></h3>
             <br />
+
+            <?php
+                if(isset($_SESSION['WRONG_CLIENT_CREDENTIALS'])) {
+                  echo "<p class='error-text'>Sorry, wrong credentials provided!</p>";
+                }
+            ?>
 
             <form action="./process/process_login.php" method="POST" name="c_login">
               <div class="form-group first">

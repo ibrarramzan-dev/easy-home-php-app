@@ -1,8 +1,8 @@
 <header>
   <nav class="navbar navbar-expand-xl bg-light navbar-light fixed-top ">
     <div class="container-fluid">
-      <a class=" a_navbar navbar-brand" href="index.html">
-        <!-- <img id="logo" src="images/logo.jpg" alt="Logo"> -->
+      <a class="a_navbar navbar-brand logo_a_navbar" href="/">
+        <img id="logo" src="images/logo.jpg" alt="Logo" style="width: 195px; height: 60px;" title="Easy Home">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -21,12 +21,24 @@
           <li class="nav-item">
             <a class="a_navbar nav-link" href="#contact">Contact</a>
           </li>
-          <li class="nav-item ">
-            <a class="a_navbar nav-link" href="/login.php">Login</a>
-          </li>
-          <li class="nav-item ">
-            <a class="a_navbar nav-link" href="/signup.php">Signup</a>
-          </li>
+          <?php
+            if(isset($_SESSION['client_username'])) {
+              echo "                
+                <li class='nav-item'>
+                  <a class='a_navbar nav-link' href='./process/process_logout.php'>Logout</a>
+                </li>
+              ";              
+            } else {
+              echo "
+                <li class='nav-item'>
+                  <a class='a_navbar nav-link' href='/login.php'>Login</a>
+                </li>
+                <li class='nav-item'>
+                  <a class='a_navbar nav-link' href='/signup.php'>Signup</a>
+                </li>
+              ";              
+            }
+          ?>
       </div>
       </ul>
     </div>
