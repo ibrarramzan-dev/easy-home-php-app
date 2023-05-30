@@ -39,21 +39,20 @@
 
   <?php
     if(isset($_SESSION['account_created'])) {
+      unset($_SESSION['account_created']);
+
       echo "
         <div class='toast-alert'>
-          <p class='toast-alert-header'>Success</p>
+          <p class='toast-alert-header'>Success</p> 
           <p class='toast-alert-body'>Account created</p>
         </div>
         ";
     }
   ?>
 
-
-
-
   <!-- End of Toasts -->
 
-  <!-- page content -->
+  <!-- Page Content -->
 
   <div class="d-lg-flex half">
     <div class="bg order-1 order-md-2" style="background-image: url('images/login-bg.jpg');"></div>
@@ -77,6 +76,7 @@
                 <input type="text" class="form-control" placeholder="your-email@gmail.com" id="usernameOrEmail"
                   name="usernameOrEmail">
               </div>
+
               <div class=" form-group last mb-3">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" placeholder="Your Password" id="password" name="password">
@@ -97,11 +97,9 @@
         </div>
       </div>
     </div>
-
-
   </div>
 
-  <!-- ------------ -->
+  <!-- End of Page Content -->
 
 
   <!-- footer -->

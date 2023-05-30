@@ -19,7 +19,24 @@
 
   <!-- ------ -->
 
-  <!-- page content -->
+  <!-- Toasts -->
+
+  <?php
+    if(isset($_SESSION['extra_account_info_added'])) {
+      unset($_SESSION['extra_account_info_added']);
+
+      echo "
+        <div class='toast-alert'>
+          <p class='toast-alert-header'>Success</p> 
+          <p class='toast-alert-body'>Account info updated</p>
+        </div>
+        ";
+    }
+  ?>
+
+  <!-- End of Toasts -->
+
+  <!-- Page Content -->
 
   <img id="background" src="images/background.jpg" alt="background image">
   <h2 id="title-style">Cu toata increderea. De 15 de ani</h2>
@@ -212,7 +229,7 @@
   <br>
   <br>
 
-  <!-- ------------ -->
+  <!-- End of Page Content -->
 
 
   <!-- footer -->

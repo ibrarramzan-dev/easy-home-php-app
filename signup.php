@@ -34,7 +34,7 @@
   <!-- ------ -->
 
 
-  <!-- page content -->
+  <!-- Page Content -->
 
   <div class="signup-page-container d-lg-flex half">
     <div class="bg order-1 order-md-2" style="background-image: url('images/login-bg.jpg');"></div>
@@ -51,14 +51,17 @@
                 <label for="username">Username</label>
                 <input type="text" class="form-control" placeholder="Your Username" id="username" name="username">
               </div>
+
               <div class="form-group first">
                 <label for="email">Email</label>
                 <input type="text" class="form-control" placeholder="your-email@gmail.com" id="email" name="email">
               </div>
+
               <div class="form-group last mb-3">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" placeholder="Your Password" id="password" name="password">
               </div>
+
               <div class="form-group last mb-3">
                 <label for="password2">Confirm Password</label>
                 <input type="password" class="form-control" placeholder="Your Password" id="password2" name="password2">
@@ -71,11 +74,9 @@
         </div>
       </div>
     </div>
-
-
   </div>
 
-  <!-- ------------ -->
+  <!-- End of Page Content -->
 
 
   <!-- footer -->

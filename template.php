@@ -20,11 +20,15 @@
   <!-- ------ -->
 
 
-  <!-- page content -->
+  <!-- Page Content -->
 
-  <br /><br /> CONTENT OF YOUR PAGE... <br /><br /><br />
+  <br /><br />
 
-  <!-- ------------ -->
+  CONTENT OF YOUR PAGE...
+
+  <br /><br /><br />
+
+  <!-- End of Page Content -->
 
 
   <!-- footer -->
