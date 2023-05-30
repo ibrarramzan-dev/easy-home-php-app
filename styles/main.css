@@ -425,3 +425,32 @@ hr {
 .error-text {
   color: #f00;
 }
+
+/* Toast */
+
+.toast-alert {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  width: 250px;
+  height: 55px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #929292;
+}
+.toast-alert-header {
+  height: 25px;
+  background: #01c201;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+.toast-alert-body {
+  text-align: center;
+  margin-top: -13px;
+  font-weight: 500;
+  color: #444444;
+}
+
+/* End of Toast */

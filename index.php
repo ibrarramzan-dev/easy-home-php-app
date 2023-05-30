@@ -19,7 +19,6 @@
 
   <!-- ------ -->
 
-
   <!-- page content -->
 
   <img id="background" src="images/background.jpg" alt="background image">

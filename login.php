@@ -23,7 +23,6 @@
   <script src="js/bootstrap.min.js" defer></script>
   <script src="js/main.js" defer></script>
 
-
   <title>Login | Easy Home</title>
 </head>
 
@@ -36,6 +35,23 @@
 
   <!-- ------ -->
 
+  <!-- Toasts -->
+
+  <?php
+    if(isset($_SESSION['account_created'])) {
+      echo "
+        <div class='toast-alert'>
+          <p class='toast-alert-header'>Success</p>
+          <p class='toast-alert-body'>Account created</p>
+        </div>
+        ";
+    }
+  ?>
+
+
+
+
+  <!-- End of Toasts -->
 
   <!-- page content -->
 
@@ -76,7 +92,6 @@
               </div>
 
               <input type="submit" value="Log In" class="btn btn-block btn-primary" style="margin-top: -25px;">
-
             </form>
           </div>
         </div>

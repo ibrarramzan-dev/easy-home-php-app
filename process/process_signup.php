@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include('../includes/db.php');
 
   $client_username = $_POST['username'];
@@ -9,7 +10,8 @@
   $insert_client_query = "insert into clients (username, email, password) values ('$client_username', '$client_email', '$client_password')";
 
   $results = mysqli_query($conn, $insert_client_query);
-  
+
+  $_SESSION['account_created'] = TRUE;
   echo "<script>window.open('../login.php', '_self')</script>";
 
 ?>
