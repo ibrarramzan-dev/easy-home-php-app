@@ -567,3 +567,31 @@ hr {
 }
 
 /* -- End of Avatar Dropdown -- */
+
+/* -- Cere Oferta page -- */
+
+.cere-oferta-container h3 {
+  text-align: center;
+}
+.cere-oferta-form-wrapper {
+  display: flex;
+}
+.cere-oferta-product-name-col {
+  flex-basis: 30%;
+}
+.cere-oferta-form-col {
+  flex-basis: 70%;
+}
+.cere-oferta-product-name-col p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 32px;
+  font-family: Calibri;
+  letter-spacing: 1px;
+  color: #e94d3e;
+}
+.cere-oferta-form {
+  width: 60%;
+}
+
+/* -- End of Cere Oferta page -- */

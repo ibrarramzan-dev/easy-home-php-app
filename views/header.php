@@ -33,6 +33,8 @@
                     <span class='avatar-dropdown-btn'>$username</span>
                     
                     <div class='avatar-dropdown-content'>
+                      <a href='./lucrarile_mele.php'>Lucrarile mele</a>
+                      <a href='./lucrari_anterioare.php'>Lucrari anterioare</a>
                       <a href='./my_account.php'>My Account</a>
                       <a href='./logout.php'>Disconnect</a>
                     </div>

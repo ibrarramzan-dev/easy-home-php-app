@@ -1,3 +1,7 @@
+<?php
+  include('./includes/db.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +33,19 @@
         <div class='toast-alert'>
           <p class='toast-alert-header'>Success</p> 
           <p class='toast-alert-body'>Account info updated</p>
+        </div>
+        ";
+    }
+  ?>
+
+  <?php
+    if(isset($_SESSION['service_request_submitted'])) {
+      unset($_SESSION['service_request_submitted']);
+
+      echo "
+        <div class='toast-alert'>
+          <p class='toast-alert-header'>Success</p> 
+          <p class='toast-alert-body'>Service request submitted</p>
         </div>
         ";
     }
@@ -71,93 +88,46 @@
   <br>
   <br>
   <h2 id="text-contact">SERVICII BUCURESTI</h2>
+
   <div class="container-fluid mt-3">
     <div class="row">
-      <div class="col p-3 bg-primary text-white ">
-        <p class="align">1</p>
-        <div class="center-picture">
-          <img class="picture-style  " src="images/electricieni.jpeg" alt="">
+
+      <?php
+    $select_products_query = "select * from products";
+
+    $results = mysqli_query($conn, $select_products_query);
+
+    $index = 0;
+    while($row = mysqli_fetch_array($results)) {
+      $index++;
+
+      $product_id = $row['product_id'];
+      $product_name = $row['product_name'];
+      $description = $row['description'];
+      $product_img = $row['product_img'];
+
+      $service_name = str_replace(' ', '_', $product_name);
+
+      echo "
+        <div class='col p-3 bg-primary text-white'>
+          <p class='align'>$index</p>
+        
+          <div class='center-picture'>
+            <img class='picture-style' src='./images/products/$product_img' alt='Service thumbnail'>
+          </div>
+        
+          <h3 class='align'>$product_name</h3>
+          <p class='align'>$description</p>
+          
+          <a href='./cere_oferta.php?product_id=$product_id&service=$service_name' title='Get $product_name service' style='text-decoration: none;'>
+            <button class='button-style'>Cere oferta</button>
+          </a>
         </div>
-        <h3 class="align">ELECTRICIENI</h3>
-        <p class="align">Reparaţii, verificare instalaţii electrice.</p>
-        <button class="button-style">Cere oferta</button>
-      </div>
-      <div class="col p-3 bg-primary text-white ">
-        <p class="align">2</p>
-        <div class="center-picture">
-          <img class="picture-style" src="images/instalatori.jpeg" alt="">
-        </div>
-        <h3 class="align">INSTALATORI</h3>
-        <p class="align">Reparaţii instalaţii termice, apă, sanitare, gaz.</p>
-        <button class="button-style">Cere oferta</button>
-      </div>
-      <div class="col p-3 bg-primary text-white ">
-        <p class="align">3</p>
-        <div class="center-picture">
-          <img class="picture-style" src="images/amenajari.jpeg" alt="">
-        </div>
-        <h3 class="align">AMENAJARI INTERIOARE</h3>
-        <p class="align">Zugravi, montaj gresie/faianță, tapet.</p>
-        <button class="button-style">Cere oferta</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col p-3 bg-primary text-white">
-        <p class="align">4</p>
-        <div class="center-picture">
-          <img class=" space-top picture-style" src="images/electrocasnice.jpeg" alt="">
-        </div>
-        <h3 class="align">REPARATII ELECTROCASNICE</h3>
-        <p class="align">Reparatii electrocasnice</p>
-        <button class="button-style">Cere oferta</button>
-      </div>
-      <div class="col p-3 bg-primary text-white">
-        <p class="align">5</p>
-        <div class="center-picture">
-          <img class=" space-top picture-style" src="images/montaj.jpeg" alt="">
-        </div>
-        <h3 class="align">MONTAJ MOBILA</h3>
-        <p class="align">Asamblare, montare/demontare mobila, tamplarie</p>
-        <button class="button-style">Cere oferta</button>
-      </div>
-      <div class="col p-3 bg-primary text-white">
-        <p class="align">6</p>
-        <div class="center-picture">
-          <img class="picture-style" src="images/design.jpeg" alt="">
-        </div>
-        <h3 class="align">DESIGN INTERIOR</h3>
-        <p class="align">Design interior</p>
-        <button class="button-style">Cere oferta</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col p-3 bg-primary text-white ">
-        <p class="align">7</p>
-        <div class="center-picture">
-          <img class=" space-top picture-style  " src="images/curatenie.jpeg" alt="">
-        </div>
-        <h3 class="align">SERVICII CURATENIE</h3>
-        <p class="align">Servicii curatenie</p>
-        <button class="button-style">Cere oferta</button>
-      </div>
-      <div class="col p-3 bg-primary text-white ">
-        <p class="align">8</p>
-        <div class="center-picture">
-          <img class="picture-style" src="images/chef.jpeg" alt="">
-        </div>
-        <h3 class="align">PRIVATE CHEF</h3>
-        <p class="align">Private chef</p>
-        <button class="button-style">Cere oferta</button>
-      </div>
-      <div class="col p-3 bg-primary text-white ">
-        <p class="align">9</p>
-        <div class="center-picture">
-          <img class=" gradinar-style picture-style" src="images/gradinar.png" alt="">
-        </div>
-        <h3 class="align">GRADINAR</h3>
-        <p class="align">Gradinar</p>
-        <button class="button-style">Cere oferta</button>
-      </div>
+      ";
+    }
+  ?>
+
+
     </div>
   </div>
 

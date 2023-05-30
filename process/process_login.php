@@ -20,7 +20,7 @@
       echo "<script>window.open('../my_account.php', '_self')</script>";      
     }
     
-    $_SESSION['my_account_info'] = array("username"=>$row['username'], "email" => $row['email'], "phone" => $row['phone'], "address" => $row['address'], "extra_info" => $row['extra_info']);
+    $_SESSION['my_account_info'] = array("client_id" => $row['client_id'], "username"=>$row['username'], "email" => $row['email'], "phone" => $row['phone'], "address" => $row['address'], "extra_info" => $row['extra_info']);
 
     echo "<script>window.open('../', '_self')</script>";
   } else {
