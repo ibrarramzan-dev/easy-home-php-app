@@ -424,6 +424,9 @@ hr {
 
 .error-text {
   color: #f00;
+  font-family: "Sawarabi Gothic", sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 13.5px;
 }
 
 /* Toast */
@@ -475,12 +478,23 @@ hr {
 }
 .my-account-container h3 {
   text-align: center;
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.my-account-complete-your-profile-text-wrapper {
+  display: flex;
+  justify-content: center;
 }
 .my-account-complete-your-profile-text {
+  width: fit-content;
   text-align: center;
   color: rgb(23, 100, 224);
-  font-family: Calibri;
-  font-size: 18px;
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-size: 13.5px;
+  border-left: 3px solid rgb(23, 100, 224);
+  padding-left: 11px;
+  margin: 12px 0 22px 0;
 }
 .my-account-content {
   display: flex;

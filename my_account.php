@@ -27,7 +27,11 @@
 
     <?php
       if($_SESSION['my_account_info']['extra_info'] == 0) {
-        echo "<p class='my-account-complete-your-profile-text'>Please complete your account...</p>";
+        echo "
+          <div class='my-account-complete-your-profile-text-wrapper'>
+            <p class='my-account-complete-your-profile-text'>Complete your account to access services</p>
+          </div>"
+          ;
       }
     ?>
 

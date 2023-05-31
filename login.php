@@ -66,7 +66,7 @@
 
             <?php
                 if(isset($_SESSION['WRONG_CLIENT_CREDENTIALS'])) {
-                  echo "<p class='error-text'>Sorry, wrong credentials provided!</p>";
+                  echo "<p class='error-text'>Wrong credentials provided, please try again</p>";
                 }
             ?>
 
