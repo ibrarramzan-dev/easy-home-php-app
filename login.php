@@ -72,7 +72,7 @@
 
             <form action="./process/process_login.php" method="POST" name="c_login">
               <div class="form-group first">
-                <label for="username">Username</label>
+                <label for="username">Username or email</label>
                 <input type="text" class="form-control" placeholder="your-email@gmail.com" id="usernameOrEmail"
                   name="usernameOrEmail">
               </div>

@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar" style="display: flex; justify-content: flex-end;">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class=" a_navbar nav-link" href="about.html">Despre noi</a>
+            <a class=" a_navbar nav-link" href="about.php">Despre noi</a>
           </li>
           <li class="nav-item">
             <a class="a_navbar nav-link" href="#avantaje">Avantaje</a>
