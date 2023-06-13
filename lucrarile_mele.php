@@ -12,11 +12,9 @@
 
 <body>
   <!-- header -->
-
   <?php
     include("./views/header.php")
   ?>
-
   <!-- ------ -->
 
 
@@ -32,11 +30,9 @@
 
 
   <!-- footer -->
-
   <?php
     include("./views/footer.php")
   ?>
-
   <!-- ------ -->
 </body>
 

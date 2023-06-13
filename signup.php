@@ -26,11 +26,9 @@
 
 <body>
   <!-- header -->
-
   <?php
     include("./views/header.php")
   ?>
-
   <!-- ------ -->
 
 
@@ -53,7 +51,7 @@
             ?>
 
             <form action="./process/process_signup.php" method="post">
-              <div class="form-group first">
+              <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" class="form-control" placeholder="Your Username" id="username" name="username"
                   value="<?php if(isset($_SESSION['password_not_match'])) { echo $_SESSION['signup_username']; } else { echo ''; } ?>"
@@ -61,7 +59,7 @@
                   title="Minimum 6 and maximum 20 characters, should contain alphabets, (-)(_)(.)" required>
               </div>
 
-              <div class="form-group first">
+              <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" placeholder="your-email@gmail.com" id="email" name="email"
                   value="<?php if(isset($_SESSION['password_not_match'])) { echo $_SESSION['signup_email']; } else { echo ''; } ?>"
@@ -93,11 +91,9 @@
   <!-- End of Page Content -->
 
   <!-- footer -->
-
   <?php
     include("./views/footer.php")
   ?>
-
   <!-- ------ -->
 
   <script>

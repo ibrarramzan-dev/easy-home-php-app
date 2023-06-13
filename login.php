@@ -28,15 +28,12 @@
 
 <body>
   <!-- header -->
-
   <?php
     include("./views/header.php")
   ?>
-
   <!-- ------ -->
 
   <!-- Toasts -->
-
   <?php
     if(isset($_SESSION['account_created'])) {
       unset($_SESSION['account_created']);
@@ -49,7 +46,6 @@
         ";
     }
   ?>
-
   <!-- End of Toasts -->
 
   <!-- Page Content -->
@@ -71,15 +67,16 @@
             ?>
 
             <form action="./process/process_login.php" method="POST" name="c_login">
-              <div class="form-group first">
+              <div class="form-group">
                 <label for="username">Username or email</label>
-                <input type="text" class="form-control" placeholder="your-email@gmail.com" id="usernameOrEmail"
-                  name="usernameOrEmail">
+                <input type="text" class="form-control" placeholder="Your username or email" id="usernameOrEmail"
+                  name="usernameOrEmail" required>
               </div>
 
               <div class=" form-group last mb-3">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" placeholder="Your Password" id="password" name="password">
+                <input type="password" class="form-control" placeholder="Your Password" id="password" name="password"
+                  required>
               </div>
 
               <div class=" d-flex mb-5 align-items-center">
@@ -103,11 +100,9 @@
 
 
   <!-- footer -->
-
   <?php
     include("./views/footer.php")
   ?>
-
   <!-- ------ -->
 
 </body>

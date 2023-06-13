@@ -12,11 +12,9 @@
 
 <body>
   <!-- header -->
-
   <?php
     include("./views/header.php")
   ?>
-
   <!-- ------ -->
 
   <!-- Page Content -->
@@ -62,12 +60,11 @@
 
 
   <!-- footer -->
-
   <?php
     include("./views/footer.php")
   ?>
-
   <!-- ------ -->
+
   <script type="text/javascript">
   $(function() {
     $('#datetimepicker1').datetimepicker();
