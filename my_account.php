@@ -46,13 +46,13 @@
           <div class="form-group">
             <label for="fName">First Name</label>
             <input type="text" class="form-control" placeholder="Your First Name" id="fName" name="fName"
-              pattern="[a-zA-Z]{3,20}" title="No space and letters allowed" required>
+              pattern="[a-zA-Z]{3,20}" title="Allowed is alphabets and no space" required>
           </div>
 
           <div class="form-group">
             <label for="lName">Last Name</label>
             <input type="text" class="form-control" placeholder="Your Last Name" id="lName" name="lName"
-              pattern="[a-zA-Z]{3,20}" title="No space and letters allowed" required>
+              pattern="[a-zA-Z]{3,20}" title="Allowed is alphabets and no space" required>
           </div>
 
           <div class="form-group">
@@ -71,7 +71,7 @@
             <label for="phone">Phone</label>
             <input type="text" class="form-control" placeholder="Your Phone Number" id="phone" name="phone"
               value="<?php echo $_SESSION['my_account_info']['phone'] ?>" pattern="\d{12}"
-              title="Only 12 digits number allowed" style="padding-left: 23.5px;" required>
+              title="Allowed is 12 digits number" style="padding-left: 23.5px;" required>
             <span style="position: absolute; top: 43px; left: 10px; font-size: 17px">+</span>
           </div>
 
@@ -80,7 +80,7 @@
             <input type="text" class="form-control" placeholder="Your Address" id="address" name="address"
               value="<?php echo $_SESSION['my_account_info']['address'] ?>"
               pattern="^([A-Za-z_\d][A-Za-z\d_ .#\/',]*){10,}$"
-              title="Allowed alphanumeric, spaces and characters (,)(.)(#)(/)('). Minimum 10 and maximum 69 characters"
+              title="Allowed is alphanumeric, spaces and characters (,)(.)(#)(/)('). Minimum 10 and maximum 69 characters"
               maxlength="69" required>
           </div>
 
@@ -91,7 +91,10 @@
 
           <div class="form-group">
             <label for="state">State</label>
-            <input type="text" class="form-control" placeholder="Your State" id="state" name="state" required>
+            <input type="text" class="form-control" placeholder="Your State" id="state" name="state"
+              pattern="^(\p{L}+(?: \p{L}+)*){3,}$"
+              title="Allowed is alphabets and spaces only with no preceeding space. Minimum 3 and maximum 30 characters"
+              maxlength="30" required>
           </div>
 
           <br />
