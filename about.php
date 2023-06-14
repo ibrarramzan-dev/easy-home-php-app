@@ -7,6 +7,13 @@
     include("./views/head.php")
   ?>
 
+  <?php
+    if(isset($_SESSION['my_account_info']['extra_info'])) {
+      if($_SESSION['my_account_info']['extra_info'] == 0) {
+        echo "<script>window.open('./my_account.php', '_self')</script>";
+      }
+    }
+  ?>
   <title>About Us</title>
 </head>
 

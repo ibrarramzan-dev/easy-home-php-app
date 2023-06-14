@@ -35,18 +35,20 @@
   <!-- Page Content -->
 
   <div class="signup-page-container d-lg-flex half">
-    <div class="bg order-1 order-md-2" style="background-image: url('images/login-bg.jpg');"></div>
-    <div class="contents order-2 order-md-1">
+    <div class="bg order-1 order-md-2">
+      <img src="./images/login-bg.jpg" width="100%" height="910px" alt="" />
+    </div>
+    <div class="contents order-2 order-md-1" style="min-height: 909px;">
 
-      <div class="container">
+      <div class="container" style="margin-top: 100px;">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7">
             <h3 style="margin-top: -33px;">Signup to <strong>Easy Home</strong></h3>
             <br />
 
             <?php
-                if(isset($_SESSION['password_not_match'])) {
-                  echo "<p class='error-text'>Sorry, passwords did not match</p>";
+                if(isset($_SESSION['signup_error'])) {
+                  echo "<p class='error-text'>" . $_SESSION['signup_error'] . "</p>";
                 }
             ?>
 
@@ -59,11 +61,16 @@
                   title="Minimum 6 and maximum 20 characters, should contain alphabets, (-)(_)(.)" required>
               </div>
 
-              <div class="form-group">
+              <div class="form-group" id="c_signup_email_wrapper">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" placeholder="your-email@gmail.com" id="email" name="email"
                   value="<?php if(isset($_SESSION['password_not_match'])) { echo $_SESSION['signup_email']; } else { echo ''; } ?>"
                   required>
+              </div>
+
+              <div class=" form-group">
+                <label for="city">City</label>
+                <select class="form-control" placeholder="Select City" id="city" name="city" required></select>
               </div>
 
               <div class="form-group last mb-3">
@@ -90,24 +97,15 @@
 
   <!-- End of Page Content -->
 
+  <br /><br /><br /><br /><br /><br /><br />
+
   <!-- footer -->
   <?php
     include("./views/footer.php")
   ?>
   <!-- ------ -->
 
-  <script>
-  function onFormSubmit() {
-    let passwordNode = document.getElementById('password');
-    let password = passwordNode.value;
-
-    let password2Node = document.getElementById('password2');
-    let password2 = password2Node.value;
-
-    console.log(password, password2);
-  }
-  </script>
-
+  <script src="./scripts/signup.js"></script>
 </body>
 
 </html>

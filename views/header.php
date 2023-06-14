@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-xl bg-light navbar-light fixed-top ">
     <div class="container-fluid">
       <a class="a_navbar navbar-brand logo_a_navbar" href="/">
-        <img id="logo" src="images/logo.jpg" alt="Logo" style="width: 195px; height: 60px;" title="Easy Home">
+        <img id="logo" src="./images/logo.jpg" alt="Logo" style="width: 195px; height: 60px;" title="Easy Home">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -25,20 +25,30 @@
           <?php
             if(isset($_SESSION['my_account_info'])) {
               $username = $_SESSION['my_account_info']['username'];
+              $profile_picture = $_SESSION['my_account_info']['profile_picture'];
+
+              $profile_picture_src = "/images/client_profile_pictures";
+              if($profile_picture === '') {
+                $profile_picture_src = $profile_picture_src . "/avatar.png";
+              } else {
+                $profile_picture_src = $profile_picture_src . "/$username/$profile_picture";
+              }
 
               echo "                
                 <li>
-                  <div class='avatar-dropdown'>
-                    <img src='./images/client_profile_pictures/mike.jpg' alt='Avatar' class='avatar-profile-picture class='avatar-dropdown-btn' />
-                    <span class='avatar-dropdown-btn'>$username</span>
-                    
-                    <div class='avatar-dropdown-content'>
-                      <a href='./lucrarile_mele.php'>Lucrarile mele</a>
-                      <a href='./lucrari_anterioare.php'>Lucrari anterioare</a>
-                      <a href='./my_account.php'>My Account</a>
-                      <a href='./logout.php'>Disconnect</a>
+                  <a href='./my_account.php' style='text-decoration: none;'>
+                    <div class='avatar-dropdown'>
+                      <img src='$profile_picture_src' alt='Avatar' class='avatar-profile-picture class='avatar-dropdown-btn' />
+                      <span class='avatar-dropdown-btn'>$username</span>
+                      
+                      <div class='avatar-dropdown-content'>
+                        <a href='./lucrarile_mele.php'>Lucrarile mele</a>
+                        <a href='./lucrari_anterioare.php'>Lucrari anterioare</a>
+                        <a href='./my_account.php'>My Account</a>
+                        <a href='./logout.php'>Disconnect</a>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </li>
               ";              
             } else {
@@ -52,9 +62,6 @@
               ";              
             }
           ?>
-
-
-
       </div>
       </ul>
     </div>

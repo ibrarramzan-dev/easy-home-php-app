@@ -84090,7 +84090,7 @@ const onSelectChange = () => {
     cityNode.textContent = null;
 
     const option = document.createElement("option");
-    option.value = "";
+    option.setAttribute("value", "");
 
     const selectCityText = document.createTextNode("Select City");
     option.appendChild(selectCityText);
@@ -84130,8 +84130,8 @@ select.setAttribute("id", "country");
 select.setAttribute("name", "country");
 select.required = true;
 select.onchange = () => onSelectChange();
-const c_my_account_address_wrapper = document.getElementById(
-  "c_my_account_address_wrapper"
+const c_signup_email_wrapper = document.getElementById(
+  "c_signup_email_wrapper"
 );
 
 const option = document.createElement("option");
@@ -84153,4 +84153,4 @@ countries.forEach((country) => {
 
 elementContainer.appendChild(select);
 
-c_my_account_address_wrapper.append(elementContainer);
+c_signup_email_wrapper.append(elementContainer);
