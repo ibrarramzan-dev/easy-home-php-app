@@ -6,7 +6,6 @@
 <html lang="en">
 
 <head>
-
   <?php
     include("./views/head.php")
   ?>
