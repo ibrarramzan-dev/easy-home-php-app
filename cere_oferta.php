@@ -41,17 +41,36 @@
           class="cere-oferta-form" name="cere_oferta_form">
           <div class="form-group">
             <label for="problem">Describe the problem</label>
-            <input type="text" class="form-control" placeholder="Descibe the problem" id="problem" name="problem">
+            <input type="text" class="form-control" placeholder="Descibe the problem" id="problem" name="problem"
+              required>
           </div>
 
           <div class="form-group">
             <label for="">Choose a schedule</label>
-
+            <div class="checkbox">
+              <label><input type="checkbox" id="schedule-asap-checkbox" name="schedule_asap_checkbox" value="asap"
+                  onchange="onClickScheduleAsapCheckbox(this)"> <b>As
+                  soon as possible</b></label>
+            </div>
             <div class='input-group date' id='schedule-date'>
-              <input type='date' class="form-control" name="schedule_date" />
+              <input type='date' class="form-control" id="schedule-date-input" name="schedule_date" required />
               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
               </span>
             </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address <span class="info-text-small">(or change it to a different one)</span></label>
+            <input type="text" class="form-control" placeholder="Your Address" id="address" name="address"
+              value="<?php echo $_SESSION['my_account_info']['address'] ?>"
+              pattern="^([A-Za-z_\d][A-Za-z\d_ .#\/',]*){10,}$"
+              title="Allowed is alphanumeric, spaces and characters (,)(.)(#)(/)('). Minimum 10 and maximum 69 characters"
+              maxlength="69" value="<?php echo $_SESSION['my_account_info']['address'] ?>" required>
+          </div>
+
+          <div class="form-group">
+            <label for="state">Supporting Picture <span class="info-text-small">(optional)<span></label>
+            <input type="file" class="form-control" id="supporting-picture" name="supporting_picture" title="">
           </div>
 
           <br />
@@ -66,7 +85,6 @@
 
   <!-- End of Page Content -->
 
-
   <!-- footer -->
   <?php
     include("./views/footer.php")
@@ -77,6 +95,12 @@
   $(function() {
     $('#datetimepicker1').datetimepicker();
   });
+
+  function onClickScheduleAsapCheckbox(element) {
+    console.log(element.checked);
+    const scheduleDateInput = document.getElementById('schedule-date-input');
+    scheduleDateInput.disabled = element.checked;
+  }
   </script>
 </body>
 

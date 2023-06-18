@@ -422,13 +422,6 @@ hr {
   line-height: 200px;
 }
 
-.error-text {
-  color: #f00;
-  font-family: "Sawarabi Gothic", sans-serif;
-  letter-spacing: 0.5px;
-  font-size: 13.5px;
-}
-
 /* Toast */
 
 .toast-alert {
@@ -436,7 +429,8 @@ hr {
   bottom: 30px;
   left: 30px;
   width: 250px;
-  height: 55px;
+  min-height: auto;
+  /* max-height: aut; */
   background: #fff;
   border-radius: 6px;
   border: 1px solid #929292;
@@ -462,7 +456,7 @@ hr {
 }
 .toast-alert-body {
   text-align: center;
-  margin-top: -13px;
+  margin-top: -4.5px;
   font-weight: 500;
   color: #444444;
   font-family: Calibri;
@@ -609,3 +603,15 @@ hr {
 }
 
 /* -- End of Cere Oferta page -- */
+
+.error-text {
+  color: #f00;
+  font-family: "Sawarabi Gothic", sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 13.5px;
+}
+
+.info-text-small {
+  color: gray;
+  font-size: 12.5px;
+}

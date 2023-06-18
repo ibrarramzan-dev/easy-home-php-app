@@ -51,7 +51,7 @@
       echo "
         <div class='toast-alert'>
           <p class='toast-alert-header'>Success</p> 
-          <p class='toast-alert-body'>Service request submitted</p>
+          <p class='toast-alert-body'>Thank you for your request. You will receive offers shortly!</p>
         </div>
         ";
     }
