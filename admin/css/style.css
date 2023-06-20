@@ -75,12 +75,29 @@
 }
 /*  Opensans
 --------------- */
-.error-text {
-  color: #f00;
-  font-family: "Sawarabi Gothic", sans-serif;
-  letter-spacing: 0.5px;
-  font-size: 13.5px;
+.sidebar-hide .sidebar.sidebar-hide-to-small,
+.sidebar-hide .sidebar.sidebar-hide-to-small .nano,
+.sidebar-hide .sidebar.sidebar-hide-to-small .nano-content {
+  min-height: 100vh;
+  max-height: 100%;
 }
+/* My Styles */
+.header-icon i,
+.header-icon img,
+.header-icon span {
+  cursor: default !important;
+}
+.home-welcome-text {
+  text-align: center;
+  margin-top: 20%;
+}
+.content-wrap {
+  padding: 20px 0 0 65px;
+}
+.admin-form-wrapper {
+  width: 650px;
+}
+/* EOF My Styles */
 .card-body {
   padding: 0;
 }
@@ -2814,7 +2831,7 @@ tbody tr td:last-child {
 .login-form {
   background: #ffffff;
   padding: 30px 30px 20px;
-  border-radius: 2px;
+  border-radius: 12px;
 }
 .login-form h4 {
   color: #373757;
@@ -2839,6 +2856,22 @@ tbody tr td:last-child {
   text-transform: uppercase;
 }
 .login-form label a {
+  color: #5873fe;
+}
+.social-login-content {
+  margin: 0px -30px;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 30px 0px;
+  background: #fcfcfc;
+}
+.social-button {
+  padding: 0 30px;
+}
+.social-button i {
+  padding: 19px;
+}
+.register-link a {
   color: #5873fe;
 }
 .cpu-load {

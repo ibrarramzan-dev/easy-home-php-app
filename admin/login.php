@@ -1,15 +1,16 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <?php
-    include("./views/head.php");
-  ?>
+  <link href="css/lib/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <title>Login | Admin</title>
 </head>
 
 <body class="bg-primary">
-
   <div class="unix-login">
     <div class="container-fluid">
       <div class="row justify-content-center">

@@ -21,6 +21,9 @@
           <li class="nav-item">
             <a class="a_navbar nav-link" href="#contact">Contact</a>
           </li>
+          <li class="nav-item">
+            <a class="a_navbar nav-link" href="./employee/login.php">Employee Portal</a>
+          </li>
 
           <?php
             if(isset($_SESSION['my_account_info'])) {
