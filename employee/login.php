@@ -38,8 +38,11 @@
             <div class="login-form">
               <h4>Employee Login</h4>
               <?php
-                if(isset($_SESSION['WRONG_EMPLOYEE_CREDENTIALS'])) {
+                if(isset($_SESSION['WRONG_E_CREDENTIALS'])) {
                   echo "<p class='error-text'>Wrong credentials provided, please try again</p>";
+                } else if(isset($_SESSION['e_login_error'])) {
+                  $msg = $_SESSION['e_login_error'];
+                  echo "<p class='error-text'>$msg</p>";
                 }
               ?>
 

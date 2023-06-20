@@ -69,13 +69,13 @@
               <div class="form-group">
                 <label for="username">Username or email</label>
                 <input type="text" class="form-control" placeholder="Your username or email" id="usernameOrEmail"
-                  name="usernameOrEmail" required />
+                  name="usernameOrEmail" maxlength="255" required />
               </div>
 
               <div class=" form-group last mb-3">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" placeholder="Your Password" id="password" name="password"
-                  required />
+                  maxlength="32" required />
               </div>
 
               <div class=" d-flex mb-5 align-items-center">
