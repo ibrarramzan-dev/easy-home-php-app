@@ -2,11 +2,10 @@
   session_start();
   include('../includes/db.php');
 
-  $fName = $_POST['fName'];
-  $lName = $_POST['lName'];
+  $fName = $_POST['first_name'];
+  $lName = $_POST['last_name'];
   $phone = $_POST['phone'];
   $address = $_POST['address'];
-  $state = $_POST['state'];
 
   $profile_picture_name = '';
   $username = $_SESSION['my_account_info']['username'];
@@ -52,9 +51,9 @@
   try {
     $update_client_query = "";
     if($profile_picture_name === '') {
-      $update_client_query = "update clients set first_name = '$fName', last_name = '$lName', phone = '$phone', address = '$address', state = '$state', extra_info = '1' where username = '$username'";
+      $update_client_query = "update clients set first_name = '$fName', last_name = '$lName', phone = '$phone', address = '$address', extra_info = '1' where username = '$username'";
     } else {
-      $update_client_query = "update clients set first_name = '$fName', last_name = '$lName', phone = '$phone', address = '$address', state = '$state', profile_picture = '$profile_picture_name', extra_info = '1' where username = '$username'";
+      $update_client_query = "update clients set first_name = '$fName', last_name = '$lName', phone = '$phone', address = '$address', profile_picture = '$profile_picture_name', extra_info = '1' where username = '$username'";
     }
 
     
@@ -64,7 +63,6 @@
     $_SESSION['my_account_info']['last_name'] = $lName;
     $_SESSION['my_account_info']['phone'] = $phone;
     $_SESSION['my_account_info']['address'] = $address;
-    $_SESSION['my_account_info']['state'] = $state;
     $_SESSION['my_account_info']['profile_picture'] = $profile_picture_name;
     $_SESSION['my_account_info']['extra_info'] = 1;
 

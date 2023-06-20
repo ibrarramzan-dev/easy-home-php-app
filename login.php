@@ -69,13 +69,13 @@
               <div class="form-group">
                 <label for="username">Username or email</label>
                 <input type="text" class="form-control" placeholder="Your username or email" id="usernameOrEmail"
-                  name="usernameOrEmail" required>
+                  name="usernameOrEmail" required />
               </div>
 
               <div class=" form-group last mb-3">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" placeholder="Your Password" id="password" name="password"
-                  required>
+                  required />
               </div>
 
               <div class=" d-flex mb-5 align-items-center">
@@ -87,7 +87,7 @@
                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
               </div>
 
-              <input type="submit" value="Log In" class="btn btn-block btn-primary" style="margin-top: -25px;">
+              <input type="submit" value="Log In" class="btn btn-block btn-primary" style="margin-top: -25px;" />
             </form>
           </div>
         </div>

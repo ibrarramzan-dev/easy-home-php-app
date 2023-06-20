@@ -58,19 +58,15 @@
                 <input type="text" class="form-control" placeholder="Your Username" id="username" name="username"
                   value="<?php if(isset($_SESSION['password_not_match'])) { echo $_SESSION['signup_username']; } else { echo ''; } ?>"
                   pattern="[A-Za-z0-9\-_\.]{6,20}"
-                  title="Minimum 6 and maximum 20 characters, should contain alphabets, (-)(_)(.)" required>
+                  title="Minimum 6 and maximum 20 characters, should contain alphabets, (-)(_)(.)" maxlength="20"
+                  required />
               </div>
 
-              <div class="form-group" id="c_signup_email_wrapper">
+              <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" placeholder="your-email@gmail.com" id="email" name="email"
                   value="<?php if(isset($_SESSION['password_not_match'])) { echo $_SESSION['signup_email']; } else { echo ''; } ?>"
-                  required>
-              </div>
-
-              <div class=" form-group">
-                <label for="city">City</label>
-                <select class="form-control" placeholder="Select City" id="city" name="city" required></select>
+                  maxlength="255" required />
               </div>
 
               <div class="form-group last mb-3">
@@ -78,16 +74,16 @@
                 <input type="password" class="form-control" placeholder="Your Password" id="password" name="password"
                   pattern="^(?=.*[\w])(?=.*[\W])[\w\W]{8,}$"
                   title="At least one lowercase, one uppercase, one digit, one special character and 8 characters long"
-                  required>
+                  maxlength="32" required />
               </div>
 
               <div class="form-group last mb-3">
                 <label for="password2">Confirm Password</label>
                 <input type="password" class="form-control" placeholder="Your Password" id="password2" name="password2"
-                  required>
+                  maxlength="32" required />
               </div>
 
-              <input type="submit" value="Signup" class="btn btn-block btn-primary">
+              <input type="submit" value="Signup" class="btn btn-block btn-primary" />
             </form>
           </div>
         </div>
@@ -104,8 +100,6 @@
     include("./views/footer.php")
   ?>
   <!-- ------ -->
-
-  <script src="./scripts/signup.js"></script>
 </body>
 
 </html>

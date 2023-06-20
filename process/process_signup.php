@@ -4,13 +4,11 @@
 
   $client_username = $_POST['username'];
   $client_email = $_POST['email'];
-  $client_country = $_POST['country'];
-  $client_city = $_POST['city'];
   $client_password = $_POST['password'];
   $client_password2 = $_POST['password2'];
 
   if($client_password === $client_password2) {
-    $insert_client_query = "insert into clients (username, email, country, city, password) values ('$client_username', '$client_email', '$client_country', '$client_city', '$client_password')";
+    $insert_client_query = "insert into clients (username, email, password) values ('$client_username', '$client_email', '$client_password')";
 
     try {
     $results = mysqli_query($conn, $insert_client_query);

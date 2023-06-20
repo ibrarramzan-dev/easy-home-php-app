@@ -430,7 +430,6 @@ hr {
   left: 30px;
   width: 250px;
   min-height: auto;
-  /* max-height: aut; */
   background: #fff;
   border-radius: 6px;
   border: 1px solid #929292;
@@ -610,7 +609,6 @@ hr {
   letter-spacing: 0.5px;
   font-size: 13.5px;
 }
-
 .info-text-small {
   color: gray;
   font-size: 12.5px;

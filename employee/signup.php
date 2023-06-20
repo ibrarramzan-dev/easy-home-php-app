@@ -1,5 +1,6 @@
 <?php
   session_start();
+  include('./includes/db.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,68 +23,81 @@
             <div class="login-form">
               <h4>Employee Signup</h4>
               <?php
-                if(isset($_SESSION['WRONG_EMPLOYEE_CREDENTIALS'])) {
-                  echo "<p class='error-text'>Wrong credentials provided, please try again</p>";
+                if(isset($_SESSION['e_signup_error'])) {
+                  $error = $_SESSION['e_signup_error'];
+                  echo "<p class='error-text'>$error</p>";
                 }
               ?>
 
-              <form action="./process/process_signup.php" method="POST" name="c_login">
+              <form action="./process/process_signup.php" method="POST" name="e_login">
                 <div class="form-group">
-                  <label for="username">Username</label>
-                  <input type="text" class="form-control" placeholder="Enter your username" id="employee_username"
-                    name="employee_username" pattern="[A-Za-z0-9\-_\.]{6,20}"
-                    title="Minimum 6 and maximum 20 characters, should contain alphabets, (-)(_)(.)" required>
+                  <label for="first_name">First Name</label>
+                  <input type="text" class="form-control" placeholder="Your First Name" id="first_name"
+                    name="first_name" pattern="[a-zA-Z]{3,20}" title="Allowed is alphabets and no space"
+                    value="<?php if(isset($_SESSION['e_signup_pwd_not_match'])) { echo $_SESSION['e_signup_first_name']; } else { echo ''; } ?>"
+                    required />
+                </div>
+
+                <div class="form-group">
+                  <label for="last_name">Last Name</label>
+                  <input type="text" class="form-control" placeholder="Your Last Name" id="last_name" name="last_name"
+                    pattern="[a-zA-Z]{3,20}" title="Allowed is alphabets and no space"
+                    value="<?php if(isset($_SESSION['e_signup_pwd_not_match'])) { echo $_SESSION['e_signup_last_name']; } else { echo ''; } ?>"
+                    required />
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" class="form-control" placeholder="employee-email@gmail.com" id="email"
                     name="email"
-                    value="<?php if(isset($_SESSION['password_not_match'])) { echo $_SESSION['signup_email']; } else { echo ''; } ?>"
-                    required>
+                    value="<?php if(isset($_SESSION['e_signup_pwd_not_match'])) { echo $_SESSION['e_signup_email']; } else { echo ''; } ?>"
+                    maxlength="255" required />
                 </div>
 
                 <div class=" form-group last mb-3">
                   <label for="password">Password</label>
                   <input type="password" class="form-control" placeholder="Enter your password" id="password"
-                    name="password" required>
+                    name="password" pattern="^(?=.*[\w])(?=.*[\W])[\w\W]{8,}$"
+                    title="At least one lowercase, one uppercase, one digit, one special character and 8 characters long"
+                    maxlength="32" required />
+                </div>
+
+                <div class="form-group last mb-3">
+                  <label for="password2">Confirm Password</label>
+                  <input type="password" class="form-control" placeholder="Your Password" id="password2"
+                    name="password2" maxlength="32" required />
                 </div>
 
                 <div class="form-group" style="position: relative;">
                   <label for="phone">Phone</label>
                   <input type="text" class="form-control" placeholder="Enter your phone" id="phone" name="phone"
                     pattern="\d{12}" title="Allowed is 12 digits number" maxlength="12" style="padding-left: 23.5px;"
-                    required>
-                  <span style="position: absolute; top: 41px; left: 10px; font-size: 17px">+</span>
-                </div>
-
-                <div class="form-group">
-                  <label for="address">Address</label>
-                  <input type="text" class="form-control" placeholder="Enter your address" id="address" name="address"
-                    pattern="^([A-Za-z_\d][A-Za-z\d_ .#\/',]*){10,}$"
-                    title="Allowed is alphanumeric, spaces and characters (,)(.)(#)(/)('). Minimum 10 and maximum 69 characters"
-                    maxlength="69" required>
+                    value="<?php if(isset($_SESSION['e_signup_pwd_not_match'])) { echo $_SESSION['e_signup_phone']; } else { echo ''; } ?>"
+                    required />
+                  <span style="position: absolute; top: 41px; left: 10px; font-size: 17px; color: #424242;">+</span>
                 </div>
 
                 <div class="form-group">
                   <label for="service">Service</label>
-                  <select class="form-select form-control" aria-label="Service">
+                  <select class="form-select form-control" name="service" aria-label="Service" required>
                     <option value="">Select service you can offer</option>
-                    <option value="1">ELECTRICIENI</option>
-                    <option value="2">INSTALATORI</option>
-                    <option value="3">AMENAJARI INTERIOARE</option>
+                    <?php
+                      $select_products_query = "select * from products";
+
+                      $results = mysqli_query($conn, $select_products_query);
+
+                      while($row = mysqli_fetch_array($results)) {
+                        $product_id = $row['product_id'];
+                        $product_name = $row['product_name'];
+
+                        echo "<option value='$product_id'>$product_name</option>";
+                      }
+                    ?>
                   </select>
                 </div>
 
-
-                <div class="form-group">
-                  <label for="state">Profile Picture <span class="info-text-small">(optional)<span></label>
-                  <input type="file" class="form-control" id="profile-picture" name="profile_picture"
-                    placeholder="Update Profile Picture" title="Update Profile Picture">
-                </div>
-
                 <input type="submit" value="Add Employee" class="btn btn-block btn-primary"
-                  style="margin-top: -1.5px; margin-bottom: 20px;">
+                  style="margin-top: -1.5px; margin-bottom: 20px;" />
               </form>
             </div>
             <div class="employee-portal-account-nav-links-wrapper">

@@ -11,6 +11,22 @@
 </head>
 
 <body class="bg-primary">
+  <!-- Toasts -->
+
+  <?php
+    if(isset($_SESSION['e_account_created'])) {
+      unset($_SESSION['e_account_created']);
+
+      echo "
+        <div class='toast-alert'>
+          <p class='toast-alert-header'>Success</p> 
+          <p class='toast-alert-body'>Account created, pending for approval</p>
+        </div>
+        ";
+    }
+  ?>
+  <!-- End of Toasts -->
+
   <div class="unix-login">
     <div class="container-fluid">
       <div class="row justify-content-center">
@@ -29,14 +45,18 @@
 
               <form action="./process/process_login.php" method="POST">
                 <div class="form-group">
-                  <label style="text-transform: none;">Username</label>
-                  <input type="username" class="form-control" name="username" placeholder="Enter username" required>
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" placeholder="your-email@gmail.com" id="email" name="email"
+                    maxlength="255" required />
                 </div>
+
                 <div class="form-group">
                   <label style="text-transform: none;">Password</label>
-                  <input type="password" class="form-control" name="password" placeholder="Enter password" required>
+                  <input type="password" class="form-control" name="password" placeholder="Enter password"
+                    maxlength="32" required />
                 </div>
-                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
+
+                <input type="submit" value="Sign in" class="btn btn-primary btn-flat m-b-30 m-t-30" />
               </form>
             </div>
             <div class="employee-portal-account-nav-links-wrapper">
@@ -51,6 +71,8 @@
   </div>
   </div>
 
+  <!-- bootstrap -->
+  <script src="js/lib/bootstrap.min.js"></script>
 </body>
 
 </html>

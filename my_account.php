@@ -52,29 +52,29 @@
         <form action="./process/process_edit_account.php" method="POST" enctype="multipart/form-data" id="c_my_account"
           name="c_my_account" class="c-my-account">
           <div class="form-group">
-            <label for="fName">First Name</label>
-            <input type="text" class="form-control" placeholder="Your First Name" id="fName" name="fName"
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" placeholder="Your First Name" id="first_name" name="first_name"
               pattern="[a-zA-Z]{3,20}" title="Allowed is alphabets and no space"
-              value="<?php echo $_SESSION['my_account_info']['first_name'] ?>" required>
+              value="<?php echo $_SESSION['my_account_info']['first_name'] ?>" required />
           </div>
 
           <div class="form-group">
-            <label for="lName">Last Name</label>
-            <input type="text" class="form-control" placeholder="Your Last Name" id="lName" name="lName"
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" placeholder="Your Last Name" id="last_name" name="last_name"
               pattern="[a-zA-Z]{3,20}" title="Allowed is alphabets and no space"
-              value="<?php echo $_SESSION['my_account_info']['last_name'] ?>" required>
+              value="<?php echo $_SESSION['my_account_info']['last_name'] ?>" required />
           </div>
 
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" id="usernameOrEmail" name="usernameOrEmail"
-              value="<?php echo $_SESSION['my_account_info']['username'] ?>" disabled>
+              value="<?php echo $_SESSION['my_account_info']['username'] ?>" disabled />
           </div>
 
           <div class="form-group">
             <label for="email">Email</label>
             <input type="text" class="form-control" id="email" name="email"
-              value="<?php echo $_SESSION['my_account_info']['email'] ?>" disabled>
+              value="<?php echo $_SESSION['my_account_info']['email'] ?>" disabled />
           </div>
 
           <div class="form-group" style="position: relative;">
@@ -82,20 +82,8 @@
             <input type="text" class="form-control" placeholder="Your Phone Number" id="phone" name="phone"
               value="<?php echo $_SESSION['my_account_info']['phone'] ?>" pattern="\d{12}"
               title="Allowed is 12 digits number" maxlength="12" style="padding-left: 23.5px;"
-              value="<?php echo $_SESSION['my_account_info']['phone'] ?>" required>
+              value="<?php echo $_SESSION['my_account_info']['phone'] ?>" required />
             <span style="position: absolute; top: 43px; left: 10px; font-size: 17px">+</span>
-          </div>
-
-          <div class="form-group">
-            <label for="country">Country</label>
-            <input type="text" class="form-control" id="country" name="country"
-              value="<?php echo $_SESSION['my_account_info']['country'] ?>" disabled>
-          </div>
-
-          <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city"
-              value="<?php echo $_SESSION['my_account_info']['city'] ?>" disabled>
           </div>
 
           <div class="form-group">
@@ -104,25 +92,17 @@
               value="<?php echo $_SESSION['my_account_info']['address'] ?>"
               pattern="^([A-Za-z_\d][A-Za-z\d_ .#\/',]*){10,}$"
               title="Allowed is alphanumeric, spaces and characters (,)(.)(#)(/)('). Minimum 10 and maximum 69 characters"
-              maxlength="69" value="<?php echo $_SESSION['my_account_info']['address'] ?>" required>
-          </div>
-
-          <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" class="form-control" placeholder="Your State" id="state" name="state"
-              pattern="^(\p{L}+(?: \p{L}+)*){3,}$"
-              title="Allowed is alphabets and spaces only with no preceeding space. Minimum 3 and maximum 30 characters"
-              maxlength="30" value="<?php echo $_SESSION['my_account_info']['state'] ?>" required>
+              maxlength="69" value="<?php echo $_SESSION['my_account_info']['address'] ?>" required />
           </div>
 
           <div class="form-group">
             <label for="state">Profile Picture <span class="info-text-small">(optional)<span></label>
             <input type="file" class="form-control" id="profile-picture" name="profile_picture"
-              placeholder="Update Profile Picture" title="Update Profile Picture">
+              placeholder="Update Profile Picture" title="Update Profile Picture" />
           </div>
 
           <br />
-          <input type="submit" value="Update" class="btn btn-block btn-primary">
+          <input type="submit" value="Update" class="btn btn-block btn-primary" />
         </form>
 
       </div>

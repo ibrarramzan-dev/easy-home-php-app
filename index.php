@@ -98,41 +98,39 @@
     <div class="row">
 
       <?php
-    $select_products_query = "select * from products";
+        $select_products_query = "select * from products";
 
-    $results = mysqli_query($conn, $select_products_query);
+        $results = mysqli_query($conn, $select_products_query);
 
-    $index = 0;
-    while($row = mysqli_fetch_array($results)) {
-      $index++;
+        $index = 0;
+        while($row = mysqli_fetch_array($results)) {
+          $index++;
 
-      $product_id = $row['product_id'];
-      $product_name = $row['product_name'];
-      $description = $row['description'];
-      $product_img = $row['product_img'];
+          $product_id = $row['product_id'];
+          $product_name = $row['product_name'];
+          $description = $row['description'];
+          $product_img = $row['product_img'];
 
-      $service_name = str_replace(' ', '_', $product_name);
+          $service_name = str_replace(' ', '_', $product_name);
 
-      echo "
-        <div class='col p-3 bg-primary text-white'>
-          <p class='align'>$index</p>
-        
-          <div class='center-picture'>
-            <img class='picture-style' src='./images/products/$product_img' alt='Service thumbnail'>
-          </div>
-        
-          <h3 class='align'>$product_name</h3>
-          <p class='align'>$description</p>
-          
-          <a href='./cere_oferta.php?product_id=$product_id&service=$service_name' title='Get $product_name service' style='text-decoration: none;'>
-            <button class='button-style'>Cere oferta</button>
-          </a>
-        </div>
-      ";
-    }
-  ?>
-
-
+          echo "
+            <div class='col p-3 bg-primary text-white'>
+              <p class='align'>$index</p>
+            
+              <div class='center-picture'>
+                <img class='picture-style' src='./images/products/$product_img' alt='Service thumbnail'>
+              </div>
+            
+              <h3 class='align'>$product_name</h3>
+              <p class='align'>$description</p>
+              
+              <a href='./cere_oferta.php?product_id=$product_id&service=$service_name' title='Get $product_name service' style='text-decoration: none;'>
+                <button class='button-style'>Cere oferta</button>
+              </a>
+            </div>
+          ";
+        }
+      ?>
     </div>
   </div>
 
