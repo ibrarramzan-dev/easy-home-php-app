@@ -1,5 +1,8 @@
 <?php
   session_start();
+  if(!isset($_SESSION['admin_info'])) {
+    header("Location:./login.php");
+  }
 ?>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

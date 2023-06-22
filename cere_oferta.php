@@ -38,11 +38,11 @@
       </div>
       <div class="cere-oferta-form-col">
         <form action="<?php echo "./process/process_cere_oferta.php?product_id=" . $_GET['product_id'] ?>" method="POST"
-          class="cere-oferta-form" name="cere_oferta_form">
+          enctype="multipart/form-data" class="cere-oferta-form" name="cere_oferta_form">
           <div class="form-group">
             <label for="problem">Describe the problem</label>
-            <input type="text" class="form-control" placeholder="Descibe the problem" id="problem" name="problem"
-              required>
+            <textarea style="height: 8em;" minlength="20" maxlength="2000" class="form-control"
+              placeholder="Descibe the problem" id="problem" name="problem" required></textarea>
           </div>
 
           <div class="form-group">
@@ -57,6 +57,12 @@
               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
               </span>
             </div>
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" placeholder="Enter your Offer price" id="price" name="price"
+              pattern="^\d{2,}$" title="Allowed is digits. Minimum 2 and maximum 10 characters" maxlength="10" required>
           </div>
 
           <div class="form-group">

@@ -7,8 +7,9 @@
                 <span>Employee-Easy Home</span>
               </a>
             </div>
-            <li><a href="./users.php"><i class="ti-user"></i> Requests</a></li>
-            <li><a href="./reports.php"><i class="ti-stats-up"></i> Accepted Requests</a></li>
+            <li><a href="./requests.php"><i class="ti-user"></i> Requests</a></li>
+            <li><a href="./requests.php?status=pending"><i class="ti-stats-up"></i> Pending Requests</a></li>
+            <li><a href="./requests.php?status=completed"><i class="ti-stats-up"></i> Completed Requests</a></li>
             <li><a href="./logout.php"><i class="ti-close"></i> Logout</a></li>
           </ul>
         </div>

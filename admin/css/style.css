@@ -81,6 +81,7 @@
   min-height: 100vh;
   max-height: 100%;
 }
+
 /* My Styles */
 .header-icon i,
 .header-icon img,
@@ -97,7 +98,15 @@
 .admin-form-wrapper {
   width: 650px;
 }
+.error-text {
+  color: #f00;
+  font-family: "Sawarabi Gothic", sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 13.5px;
+  text-align: center;
+}
 /* EOF My Styles */
+
 .card-body {
   padding: 0;
 }

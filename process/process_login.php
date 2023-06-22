@@ -16,7 +16,7 @@
     
     $row = mysqli_fetch_array($results);
 
-    $_SESSION['my_account_info'] = array("client_id" => $row['client_id'], "first_name" => $row['first_name'], "last_name" => $row['last_name'], "username" => $row['username'], "email" => $row['email'], "phone" => $row['phone'], "address" => $row['address'], "country" => $row['country'], "city" => $row['city'], "state" => $row['state'], "profile_picture" => $row['profile_picture'], "extra_info" => $row['extra_info']);
+    $_SESSION['my_account_info'] = array("client_id" => $row['client_id'], "first_name" => $row['first_name'], "last_name" => $row['last_name'], "username" => $row['username'], "email" => $row['email'], "phone" => $row['phone'], "address" => $row['address'], "profile_picture" => $row['profile_picture'], "extra_info" => $row['extra_info']);
 
     if($row['extra_info'] == 0) {
       echo "<script>window.open('../my_account.php', '_self')</script>";      

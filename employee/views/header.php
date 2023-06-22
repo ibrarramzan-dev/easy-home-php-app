@@ -18,7 +18,12 @@
             </div>
             <div class="dropdown dib">
               <div class="header-icon">
-                <span class="user-avatar">John</span>
+                <span class="user-avatar">
+                  <?php
+                    $email = $_SESSION['e_info']['email'];
+                    echo "<span style='font-weight: 400;'>Logged in as:</span> $email";
+                  ?>
+                </span>
               </div>
             </div>
           </div>

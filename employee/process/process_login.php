@@ -25,7 +25,7 @@
       if(isset($_SESSION['e_login_error'])) {
         unset($_SESSION['e_login_error']);
       }
-      echo "<script>window.open('../', '_self')</script>";
+      echo "<script>window.open('../requests.php', '_self')</script>";
   } catch (Exception $e) {
       $msg = $e->getMessage();
       $_SESSION['e_login_error'] = $msg;
