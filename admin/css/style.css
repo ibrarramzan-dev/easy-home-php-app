@@ -105,6 +105,10 @@
   font-size: 13.5px;
   text-align: center;
 }
+.no-record-found-text {
+  text-align: center;
+  margin-top: 25px;
+}
 /* EOF My Styles */
 
 .card-body {

@@ -2,6 +2,8 @@
   session_start();
   if(!isset($_SESSION['admin_info'])) {
     header("Location:./login.php");
+  } else {
+    include('./includes/db.php');
   }
 ?>
 <meta charset="utf-8">
