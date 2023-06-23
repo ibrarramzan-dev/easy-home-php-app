@@ -109,6 +109,11 @@
   text-align: center;
   margin-top: 25px;
 }
+.link-broken-text {
+  text-align: center;
+  margin-top: 20%;
+  color: #ff0000;
+}
 /* EOF My Styles */
 
 .card-body {

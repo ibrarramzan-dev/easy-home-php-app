@@ -5,7 +5,9 @@
   $order_id = $_GET['order_id'];
   $employee_id = $_SESSION['e_info']['employee_id'];
 
-  $update_order_query = "update orders set is_completed = 1 WHERE order_id = '$order_id'";
+  $date = date("m-d-Y");
+
+  $update_order_query = "update orders set is_completed = 1, date_completed = '$date' WHERE order_id = '$order_id'";
 
   mysqli_query($conn, $update_order_query);
 
