@@ -27,7 +27,6 @@
               <ul>
                 <li><a href="./services.php">View All</a></li>
                 <li><a href="./addService.php">Add Service</a></li>
-                <li><a href="./editService.php">Edit Service</a></li>
               </ul>
             </li>
             <li><a href="./users.php"><i class="ti-user"></i> Users</a></li>

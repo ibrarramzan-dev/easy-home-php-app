@@ -96,7 +96,7 @@
           </div>
 
           <div class="form-group">
-            <label for="state">Profile Picture <span class="info-text-small">(optional)<span></label>
+            <label for="profile_picture">Profile Picture <span class="info-text-small">(optional)<span></label>
             <input type="file" class="form-control" id="profile-picture" name="profile_picture"
               placeholder="Update Profile Picture" title="Update Profile Picture" />
           </div>

@@ -55,7 +55,6 @@
     } else {
       $update_client_query = "update clients set first_name = '$fName', last_name = '$lName', phone = '$phone', address = '$address', profile_picture = '$profile_picture_name', extra_info = '1' where username = '$username'";
     }
-
     
     $results = mysqli_query($conn, $update_client_query);
 
