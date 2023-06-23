@@ -115,7 +115,7 @@
                   <td>$email</td>
                   <td>$phone</td>
                   <td>$address</td>
-                  <td>$profile_picture</td>
+                  <td><u><a href='../../images/client_profile_pictures/$username/$profile_picture' title='View image' target='_blank'>View Image</a></u></td>
                   <td>$date_created</td>
                 </tr>";
           }
