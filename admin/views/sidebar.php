@@ -17,8 +17,7 @@
             <li><a class="sidebar-sub-toggle"><i class="ti-shopping-cart-full"></i> Orders <span
                   class="sidebar-collapse-icon ti-angle-down"></span></a>
               <ul>
-                <li><a href="./orders.php">View All</a></li>
-                <li><a href="./pendingOrders.php?status=pending">Pending Orders</a></li>
+                <li><a href="./orders.php">Pending Orders</a></li>
                 <li><a href="./orders.php?status=completed">Completed Orders</a></li>
                 <li><a href="./orders.php?status=cancelled">Cancelled Orders</a></li>
               </ul>

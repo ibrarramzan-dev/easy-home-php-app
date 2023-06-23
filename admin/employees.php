@@ -20,8 +20,6 @@
       if(isset($_GET['status'])) {
         $status = $_GET['status'];
       }
-      $employee_id = $_SESSION['e_info']['employee_id'];
-      $product_id = $_SESSION['e_info']['service'];
       
       $select_employees_query = "select * from employees where is_active = 1";
       $select_new_employee_requests_query = "select * from employees where is_active = 0";

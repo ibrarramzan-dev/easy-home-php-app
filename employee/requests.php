@@ -48,8 +48,8 @@
       $product_id = $_SESSION['e_info']['service'];
       
       $select_orders_query = "select * from orders where employee_id = 0 AND product_id = '$product_id'";
-      $select_pending_orders_query = "select * from orders where employee_id = '$employee_id' AND completed = 0";
-      $select_completed_orders_query = "select * from orders where employee_id = '$employee_id' AND completed = 1";
+      $select_pending_orders_query = "select * from orders where employee_id = '$employee_id' AND is_completed = 0";
+      $select_completed_orders_query = "select * from orders where employee_id = '$employee_id' AND is_completed = 1";
 
 
       if($status == 'pending') {
