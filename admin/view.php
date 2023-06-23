@@ -186,7 +186,7 @@
       </div>
     </div>";
       } else {
-        echo "<p class='link-broken-text'>Link broken</p>";
+        echo "<p class='error-text'>Link broken</p>";
       }
     ?>
   </div>

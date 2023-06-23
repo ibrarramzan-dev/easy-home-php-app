@@ -49,6 +49,11 @@
                   <td>$service_name</td>
                   <td>$description</td>
                   <td><u><a href='../../images/products/$product_img' title='View image' target='_blank'>View Image</a></u></td>
+                  <td>
+                    <a href='./editService.php?service_id=$product_id'>
+                      <button type='button' class='btn btn-primary'>Edit</button>                            
+                    </a>
+                  </td>
                 </tr>";
           }
 

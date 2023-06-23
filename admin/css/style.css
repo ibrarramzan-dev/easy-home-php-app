@@ -109,7 +109,7 @@
   text-align: center;
   margin-top: 25px;
 }
-.link-broken-text {
+.error-text {
   text-align: center;
   margin-top: 20%;
   color: #ff0000;
@@ -122,6 +122,10 @@ form label {
 }
 form input {
   border-radius: 8px !important;
+}
+.edit-service-product-img {
+  max-width: 360px;
+  max-height: 150px;
 }
 /* EOF My Styles */
 
