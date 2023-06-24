@@ -94,10 +94,10 @@
           if ($is_cancelled != 1) {
             $completed = 'Yes';
             $date_cancelled = 'N/A';
+            $classname = '';
           } else {
             $cancelled = 'Yes';
             $date_completed = 'N/A';
-            $classname = '';
           }
 
           $employee_name = "N/A";

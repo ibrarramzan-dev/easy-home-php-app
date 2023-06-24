@@ -45,6 +45,8 @@ a.selected {
 }
 /* Servicii */
 .picture-style {
+  width: 100% !important;
+  height: 100% !important;
   padding: 15px;
   margin: 0 auto;
   display: block;
@@ -627,7 +629,8 @@ hr {
   color: gray;
   font-size: 12.5px;
 }
-.order-pending-bg {
+.order-pending-bg,
+.order-cancelled-bg {
   background-color: #fe6153;
 }
 .order-accepted-bg {
@@ -638,4 +641,7 @@ hr {
   color: #515151;
   margin-top: 30px;
   margin-bottom: 25px;
+}
+.order-cancelled-bg a {
+  color: #fff;
 }
