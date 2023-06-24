@@ -633,3 +633,9 @@ hr {
 .order-accepted-bg {
   background-color: #3ee955;
 }
+.no-record-found-text {
+  text-align: center;
+  color: #515151;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
