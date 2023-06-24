@@ -114,10 +114,10 @@
   margin-top: 20%;
   color: #ff0000;
 }
-form {
+#add-service-form {
   width: 60%;
 }
-form label {
+#add-service-form label {
   font-weight: bold;
 }
 form input {

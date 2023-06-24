@@ -22,7 +22,7 @@
             <a class="a_navbar nav-link" href="#contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="a_navbar nav-link" href="./employee/login.php">Employee Portal</a>
+            <a class="a_navbar nav-link" href="./employee">Employee Portal</a>
           </li>
 
           <?php
@@ -39,28 +39,30 @@
 
               echo "                
                 <li>
-                  <a href='./my_account.php' style='text-decoration: none;'>
-                    <div class='avatar-dropdown'>
-                      <img src='$profile_picture_src' alt='Avatar' class='avatar-profile-picture class='avatar-dropdown-btn' />
-                      <span class='avatar-dropdown-btn'>$username</span>
-                      
-                      <div class='avatar-dropdown-content'>
-                        <a href='./lucrarile_mele.php'>Lucrarile mele</a>
-                        <a href='./lucrari_anterioare.php'>Lucrari anterioare</a>
-                        <a href='./my_account.php'>My Account</a>
-                        <a href='./logout.php'>Disconnect</a>
-                      </div>
+                  <div class='avatar-dropdown'>
+                    <img src='$profile_picture_src' alt='Avatar' class='avatar-profile-picture class='avatar-dropdown-btn' />
+                    <span class='avatar-dropdown-btn' style='font-weight: bold;'>$username</span>
+                    
+                    <div class='avatar-dropdown-content'>
+                      <a href='./lucrarile_mele.php'>Lucrarile mele</a>
+                      <a href='./lucrari_anterioare.php'>Lucrari anterioare</a>
+                      <a href='./my_account.php'>My Account</a>
+                      <a href='./logout.php'>Disconnect</a>
                     </div>
-                  </a>
+                  </div>
                 </li>
               ";              
             } else {
               echo "
-                <li class='nav-item'>
-                  <a class='a_navbar nav-link' href='/signup.php'>Signup</a>
-                </li>
-                <li class='nav-item'>
-                  <a class='a_navbar nav-link' href='/login.php'>Login</a>
+                <li style='padding-top: 7px;'>
+                  <div class='avatar-dropdown'>
+                    <span class='avatar-dropdown-btn' style='font-weight: bold; font-size: 16px;'>Contul meu <span style='font-size: 11px;'>▼</span></span>
+                    
+                    <div class='avatar-dropdown-content'>
+                      <a href='/login.php'>Login</a>
+                      <a href='/signup.php'>Signup</a>
+                    </div>
+                  </div>
                 </li>
               ";              
             }

@@ -54,7 +54,7 @@
   <br>
   <!-- text -->
   <div class="text-style">
-    <h2 class="title">EASY <span id="home">HOME</span></h2>
+    <h2 tle">EASY <span id="home">HOME</span></h2>
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. At tenetur hic quas temporibus dolores culpa placeat
     debitis vitae. Provident eius, quas velit excepturi temporibus dicta suscipit voluptatem debitis ea blanditiis
     voluptatum illum repellendus tempora ipsa maxime! Fugit voluptatem nesciunt quasi vitae facilis ipsum incidunt vel!

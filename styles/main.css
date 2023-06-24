@@ -603,6 +603,20 @@ hr {
 
 /* -- End of Cere Oferta page -- */
 
+/* -- Lucrarile pages -- */
+
+.lucrarile-container {
+  padding-left: 50px;
+}
+.lucrarile-heading {
+  margin-top: 38px;
+  margin-bottom: 26.5px;
+}
+.lucrarile-view-image-link {
+  color: #fff;
+}
+/* -- End of Lucrarile pages -- */
+
 .error-text {
   color: #f00;
   font-family: "Sawarabi Gothic", sans-serif;
@@ -612,4 +626,10 @@ hr {
 .info-text-small {
   color: gray;
   font-size: 12.5px;
+}
+.order-pending-bg {
+  background-color: #fe6153;
+}
+.order-accepted-bg {
+  background-color: #3ee955;
 }

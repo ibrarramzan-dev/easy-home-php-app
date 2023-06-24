@@ -1,6 +1,11 @@
 <?php
   session_start();
-  include('./includes/db.php');
+  if(!isset($_SESSION['e_info'])) {
+    header("Location:./login.php");
+  } else {
+    include('./includes/db.php');
+  }
+
 ?>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

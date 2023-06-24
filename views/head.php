@@ -1,5 +1,17 @@
 <?php
 session_start();
+$private_pages = ['/cere_oferta.php', '/lucrarile_mele.php', '/lucrari_anterioare.php', '/my_account.php'];
+$request_uri = $_SERVER['REQUEST_URI'];
+
+$request_uri = explode('?', $request_uri);
+$route = $request_uri[0];
+// die($route);
+if(!isset($_SESSION['my_account_info'])) {
+  if(in_array($route, $private_pages)) {
+    header("Location:./login.php");
+  }
+}
+
 ?>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
