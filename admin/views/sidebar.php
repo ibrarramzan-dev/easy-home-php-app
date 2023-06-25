@@ -29,6 +29,14 @@
                 <li><a href="./addService.php">Add Service</a></li>
               </ul>
             </li>
+            <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Search <span
+                  class="sidebar-collapse-icon ti-angle-down"></span></a>
+              <ul>
+                <li><a href="./searchClient.php">Client</a></li>
+                <li><a href="./searchEmployee.php">Employee</a></li>
+                <li><a href="./searchOrder.php">Order</a></li>
+              </ul>
+            </li>
             <li><a href="./users.php"><i class="ti-user"></i> Users</a></li>
             <li><a href="./reports.php"><i class="ti-stats-up"></i> Reports</a></li>
             <li><a href="./logout.php"><i class="ti-close"></i> Logout</a></li>

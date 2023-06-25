@@ -147,6 +147,28 @@ form input {
   font-size: 16px;
   font-weight: 500;
 }
+.search-form {
+  /* width: 45%; */
+  margin-top: 17px;
+}
+.search-form-input-and-search-btn-wrapper {
+  /* width: 100%; */
+  display: flex;
+}
+.search-form-input {
+  flex-basis: 40%;
+}
+.search-form-button {
+  flex-basis: 50%;
+  margin-left: 35px;
+}
+.search-form-button input {
+  width: 140px;
+}
+.search-form-no-results-found-text {
+  margin-top: 25px;
+  margin-left: 3.5px;
+}
 /* EOF My Styles */
 
 /* Toast */

@@ -51,9 +51,9 @@
   try {
     $update_client_query = "";
     if($profile_picture_name === '') {
-      $update_client_query = "update clients set first_name = '$fName', last_name = '$lName', phone = '$phone', address = '$address', extra_info = '1' where username = '$username'";
+      $update_client_query = "update clients set first_name = '$fName', last_name = '$lName', full_name = '$fName $lName', phone = '$phone', address = '$address', extra_info = '1' where username = '$username'";
     } else {
-      $update_client_query = "update clients set first_name = '$fName', last_name = '$lName', phone = '$phone', address = '$address', profile_picture = '$profile_picture_name', extra_info = '1' where username = '$username'";
+      $update_client_query = "update clients set first_name = '$fName', last_name = '$lName', full_name = '$fName $lName', phone = '$phone', address = '$address', profile_picture = '$profile_picture_name', extra_info = '1' where username = '$username'";
     }
     
     $results = mysqli_query($conn, $update_client_query);

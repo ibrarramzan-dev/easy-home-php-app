@@ -30,8 +30,8 @@
               <form action="./process/process_login.php" method="POST">
                 <div class="form-group">
                   <label style="text-transform: none;">Username</label>
-                  <input type="username" class="form-control" name="username" placeholder="Enter username"
-                    maxlength="20" required />
+                  <input type="text" class="form-control" name="username" placeholder="Enter username" maxlength="20"
+                    required />
                 </div>
 
                 <div class="form-group">
