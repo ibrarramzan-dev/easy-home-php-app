@@ -17,6 +17,67 @@
 
     <h2 class="reports-page-heading">View Reports</h2>
 
+    <?php
+    // Bar Chart
+      $select_products_query = "select * from products";
+      $results = mysqli_query($conn, $select_products_query);
+
+      $product_names = [];
+      $stocks = [];
+      while($row = mysqli_fetch_array($results)) {
+        $product_name = $row['product_name'];
+        $stock = $row['stock'];
+
+        array_push($product_names, $product_name);
+        array_push($stocks, $stock);
+      }
+
+      $products_axis_data = '';
+      foreach ($product_names as $prod_name) {
+        $products_axis_data = "$products_axis_data, '$prod_name'";
+      }
+      $products_axis_data = ltrim($products_axis_data, $products_axis_data[0]);
+
+      $stock_axis_data = '';
+      foreach ($stocks as $stockValue) {
+        $stock_axis_data = "$stock_axis_data, $stockValue";
+      }
+      $stock_axis_data = ltrim($stock_axis_data, $stock_axis_data[0]);
+    ?>
+
+    <?php
+    // Line Chart
+    $currentYear = date("Y");
+    $currentYear = (int) $currentYear;
+    $last7thYear = $currentYear - 6;
+    
+    $last7Years = [strval($last7thYear)];
+    for($i = 1; $i < 7; $i++) {
+      array_push($last7Years, strval($last7thYear) + $i);
+    }
+
+    $years_axis_data = '';
+    foreach ($last7Years as $year) {
+      $years_axis_data = "$years_axis_data, '$year'";
+    }
+    $years_axis_data = ltrim($years_axis_data, $years_axis_data[0]);
+
+    $last7YearsOrders = [];
+    foreach ($last7Years as $year) {
+      $select_orders_query = "select * from orders WHERE is_completed = 1 AND year = '$year'";   
+      $results = mysqli_query($conn, $select_orders_query);
+
+      $numOfRows = mysqli_num_rows($results);
+      array_push($last7YearsOrders, $numOfRows);
+    }
+
+    $orders_axis_data = '';
+    foreach ($last7YearsOrders as $numOfOrders) {
+      $orders_axis_data = "$orders_axis_data, $numOfOrders";
+    }
+    $orders_axis_data = ltrim($orders_axis_data, $orders_axis_data[0]);
+    ?>
+
     <div class="reports-wrapper">
       <div class="reports-bar-chart">
         <p class="reports-chart-heading">Stock of Products available</p>
@@ -29,23 +90,21 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <?php
     include('./views/footer_script.php');
-  ?>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <script>
+    echo "<script>
   const barChart = document.getElementById('bar-chart');
 
   new Chart(barChart, {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: [$products_axis_data],
       datasets: [{
-        label: '# of Votes',
-        data: [10, 19, 3, 5, 2, 3],
+        label: 'Stocks',
+        data: [$stock_axis_data],
         borderWidth: 1
       }]
     },
@@ -57,17 +116,19 @@
       }
     }
   });
-  </script>
+  </script>";
+  ?>
 
-  <script>
+  <?php
+  echo "<script>
   const lineChart = document.getElementById('line-chart');
 
-  const labels = ['Jan', 'Feb', 'March', 'Apr', 'May', 'June', 'Jul'];
+  const labels = [$years_axis_data];
   const data = {
     labels: labels,
     datasets: [{
-      label: 'My First Dataset',
-      data: [65, 59, 80, 81, 56, 55, 40],
+      label: 'Orders (Last 6 years)',
+      data: [$orders_axis_data],
       fill: false,
       borderColor: 'rgb(75, 192, 192)',
       tension: 0.1
@@ -85,7 +146,9 @@
       }
     }
   });
-  </script>
+  </script>";
+?>
+
 </body>
 
 </html>

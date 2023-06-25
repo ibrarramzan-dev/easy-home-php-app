@@ -6,8 +6,9 @@
   $employee_id = $_SESSION['e_info']['employee_id'];
 
   $date = date("m-d-Y");
+  $year = date("Y");
 
-  $update_order_query = "update orders set is_completed = 1, date_completed = '$date' WHERE order_id = '$order_id'";
+  $update_order_query = "update orders set is_completed = 1, date_completed = '$date', year = '$year' WHERE order_id = '$order_id'";
 
   mysqli_query($conn, $update_order_query);
 
