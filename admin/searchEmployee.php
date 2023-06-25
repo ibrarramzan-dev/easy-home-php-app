@@ -15,14 +15,14 @@
 
   <div class="content-wrap">
 
-    <h2>Search Client</h2>
+    <h2>Search Employee</h2>
 
     <form action="#" class="search-form" method="POST">
       <div class="form-group">
         <div class="search-form-input-and-search-btn-wrapper">
           <div class="search-form-input">
             <input type="text" class="form-control" name="search"
-              placeholder="Search client by ID, Name, Username, Email or Phone" maxlength="255" required />
+              placeholder="Search employee by ID, Name, Email or Phone" maxlength="255" required />
           </div>
           <div class="search-form-button">
             <input type="submit" class="form-control btn btn-primary" value="Search" />
@@ -37,9 +37,9 @@
         if(isset($_POST['search'])) {
           $query = $_POST['search'];
 
-          $select_search_clients_query = "SELECT * FROM clients WHERE ((`client_id` LIKE '%".$query."%') OR (`full_name` LIKE '%".$query."%') OR (`username` LIKE '%".$query."%') OR (`email` LIKE '%".$query."%') OR (`phone` LIKE '%".$query."%')) AND extra_info = 1";
+          $select_search_employees_query = "SELECT * FROM employees WHERE ((`employee_id` LIKE '%".$query."%') OR (`full_name` LIKE '%".$query."%') OR (`email` LIKE '%".$query."%') OR (`phone` LIKE '%".$query."%')) AND is_active = 1";
 
-          $results = mysqli_query($conn, $select_search_clients_query);
+          $results = mysqli_query($conn, $select_search_employees_query);
 
           if(mysqli_num_rows($results) > 0) {
               echo "<p>Showing Results for '<b>$query</b>'</p>
@@ -50,39 +50,33 @@
                   <table class='table table-hover'>
                     <thead>
                       <tr>
-                        <th>Client Id</th>
+                        <th>Employee Id</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Username</th>
                         <th>Email</th>
+                        <th>Product Id</th>
                         <th>Phone</th>
-                        <th>Address</th>
-                        <th>Profile Picture</th>
                         <th>Date Created</th>
                       </tr>
                     </thead>
                     <tbody>";
 
         while($row = mysqli_fetch_array($results)) {
-          $client_id = $row['client_id'];
+          $employee_id = $row['employee_id'];
           $first_name = $row['first_name'];
           $last_name = $row['last_name'];
-          $username = $row['username'];
           $email = $row['email'];
+          $product_id = $row['product_id'];
           $phone = $row['phone'];
-          $address = $row['address'];
-          $profile_picture = $row['profile_picture'];
           $date_created = $row['date_created'];
 
           echo "<tr>
-                  <th scope='row'>$client_id</th>
+                  <th scope='row'>$employee_id</th>
                   <td>$first_name</td>
                   <td>$last_name</td>
-                  <td>$username</td>
                   <td>$email</td>
+                  <td><u><a href='./view.php?entity=product&entity_id=$product_id' title='View Product' target='_blank'>$product_id</a></u></td>
                   <td>$phone</td>
-                  <td>$address</td>
-                  <td><u><a href='../../images/client_profile_pictures/$username/$profile_picture' title='View image' target='_blank'>View Image</a></u></td>
                   <td>$date_created</td>
                 </tr>";
           }
