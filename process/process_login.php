@@ -4,6 +4,11 @@
 
   $username_or_email = $_POST['usernameOrEmail'];
   $password = $_POST['password'];
+  $rememberMe = false;
+
+  if(isset($_POST['rememberMe'])) {
+    $rememberMe = true;
+  }
 
   $select_client_query = "select * from clients where (username='$username_or_email' OR email='$username_or_email') AND password='$password'";
 
@@ -16,7 +21,12 @@
     
     $row = mysqli_fetch_array($results);
 
-    $_SESSION['my_account_info'] = array("client_id" => $row['client_id'], "first_name" => $row['first_name'], "last_name" => $row['last_name'], "username" => $row['username'], "email" => $row['email'], "phone" => $row['phone'], "address" => $row['address'], "profile_picture" => $row['profile_picture'], "extra_info" => $row['extra_info']);
+    $my_account_info = array("client_id" => $row['client_id'], "first_name" => $row['first_name'], "last_name" => $row['last_name'], "username" => $row['username'], "email" => $row['email'], "phone" => $row['phone'], "address" => $row['address'], "profile_picture" => $row['profile_picture'], "extra_info" => $row['extra_info']);
+    $_SESSION['my_account_info'] = $my_account_info;
+
+    if($rememberMe) {
+      setcookie("my_account_info", json_encode($my_account_info), time() + (86400 * 30), "/"); // 86400 = 1 day      
+    }
 
     if($row['extra_info'] == 0) {
       echo "<script>window.open('../my_account.php', '_self')</script>";      

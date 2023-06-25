@@ -5,8 +5,11 @@ $request_uri = $_SERVER['REQUEST_URI'];
 
 $request_uri = explode('?', $request_uri);
 $route = $request_uri[0];
-// die($route);
-if(!isset($_SESSION['my_account_info'])) {
+
+if (isset($_COOKIE['my_account_info'])) {
+  $data = json_decode($_COOKIE['my_account_info'], true);
+  $_SESSION['my_account_info'] = $data;
+} else if(!isset($_SESSION['my_account_info'])) {
   if(in_array($route, $private_pages)) {
     header("Location:./login.php");
   }
