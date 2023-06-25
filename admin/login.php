@@ -23,7 +23,7 @@
               <h4>Administrator Login</h4>
               <?php
                 if(isset($_SESSION['WRONG_ADMIN_CREDENTIALS'])) {
-                  echo "<p class='error-text'>Wrong credentials provided, please try again</p>";
+                  echo "<p class='error-text' style='margin-top: -20px'>Wrong credentials provided, please try again</p>";
                 }
               ?>
 
