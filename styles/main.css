@@ -542,12 +542,34 @@ hr {
 #forgot-password-form-reset-btn-wrapper {
   display: flex;
   justify-content: right;
-}
-#forgot-password-form-reset-btn-wrapper {
   margin-top: 10px;
 }
 
 /* -- End of Forgot Password page -- */
+
+/* -- Account Recovery page -- */
+
+#recover-account-container h2 {
+  text-align: center;
+}
+#recover-account-page-content-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#recover-account-form {
+  width: 450px;
+}
+#recover-account-email-input-wrapper {
+  margin-top: 20px;
+}
+#recover-account-form-reset-btn-wrapper {
+  display: flex;
+  justify-content: right;
+  margin-top: 10px;
+}
+
+/* -- End of Account Recovery page -- */
 
 /* -- Avatar Dropdown -- */
 

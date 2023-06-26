@@ -24,6 +24,13 @@
 
   <div id="forgot-password-page-container">
     <h2>Forgot Password</h2>
+    <?php
+      if(isset($_SESSION['forgot_password_error'])) {
+        $error = $_SESSION['forgot_password_error'];
+        unset($_SESSION['forgot_password_error']);
+        echo "<p style='text-align: center; margin-top: 22px; margin-bottom: -7px; color: red;'>$error</p>";
+      }
+    ?>
 
     <div id="forgot-password-page-content-wrapper">
       <form action="./process/process_forgot_password.php" method="POST" id="forgot-password-form">

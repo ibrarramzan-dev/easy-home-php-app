@@ -44,6 +44,15 @@
           <p class='toast-alert-body'>Account created</p>
         </div>
         ";
+    } else if(isset($_SESSION['password_changed'])) {
+      unset($_SESSION['password_changed']);
+
+      echo "
+        <div class='toast-alert'>
+          <p class='toast-alert-header'>Success</p> 
+          <p class='toast-alert-body'>Password changed</p>
+        </div>
+        ";
     }
   ?>
   <!-- End of Toasts -->
@@ -84,7 +93,7 @@
                   <div class=" control__indicator">
                   </div>
                 </label>
-                <span class="ml-auto"><a href="./forgotPassword.php" class="forgot-pass">Forgot Password</a></span>
+                <span class="ml-auto"><a href="./forgot_password.php" class="forgot-pass">Forgot Password</a></span>
               </div>
 
               <input type="submit" value="Log In" class="btn btn-block btn-primary" style="margin-top: -25px;" />

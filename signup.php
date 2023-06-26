@@ -40,7 +40,7 @@
     </div>
     <div class="contents order-2 order-md-1" style="min-height: 909px;">
 
-      <div class="container" style="margin-top: 100px;">
+      <div class="container" style="margin-top: 6px;">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7">
             <h3 style="margin-top: -33px;">Signup to <strong>Easy Home</strong></h3>

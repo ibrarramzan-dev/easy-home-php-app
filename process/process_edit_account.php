@@ -62,8 +62,16 @@
     $_SESSION['my_account_info']['last_name'] = $lName;
     $_SESSION['my_account_info']['phone'] = $phone;
     $_SESSION['my_account_info']['address'] = $address;
-    $_SESSION['my_account_info']['profile_picture'] = $profile_picture_name;
+    if($profile_picture_name !== '') {
+      $_SESSION['my_account_info']['profile_picture'] = $profile_picture_name;
+    }
     $_SESSION['my_account_info']['extra_info'] = 1;
+
+    if (isset($_COOKIE['my_account_info'])) {
+      $my_account_info_encoded = json_encode($_SESSION['my_account_info']);
+
+      setcookie("my_account_info", $my_account_info_encoded, null, "/");      
+    }
 
     $_SESSION['extra_account_info_added'] = TRUE;
 
