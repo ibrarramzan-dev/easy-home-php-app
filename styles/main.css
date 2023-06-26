@@ -523,6 +523,29 @@ hr {
 
 /* -- End of My Account page -- */
 
+/* -- Forgot Password page -- */
+
+.forgot-password-page-container {
+  width: 70%;
+  margin-top: 33px;
+  margin-left: 80px;
+}
+#forgot-password-form {
+  width: 450px;
+}
+#forgot-password-email-input-wrapper {
+  margin-top: 20px;
+}
+#forgot-password-form-reset-btn-wrapper {
+  display: flex;
+  justify-content: right;
+}
+#forgot-password-form-reset-btn-wrapper {
+  margin-top: 10px;
+}
+
+/* -- End of Forgot Password page -- */
+
 /* -- Avatar Dropdown -- */
 
 /* Dropdown Button */
