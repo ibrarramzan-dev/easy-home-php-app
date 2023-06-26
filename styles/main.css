@@ -525,10 +525,13 @@ hr {
 
 /* -- Forgot Password page -- */
 
-.forgot-password-page-container {
-  width: 70%;
-  margin-top: 33px;
-  margin-left: 80px;
+#forgot-password-page-container h2 {
+  text-align: center;
+}
+#forgot-password-page-content-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 #forgot-password-form {
   width: 450px;
