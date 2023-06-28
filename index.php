@@ -40,11 +40,7 @@
           <p class='toast-alert-body'>Account info updated</p>
         </div>
         ";
-    }
-  ?>
-
-  <?php
-    if(isset($_SESSION['service_request_submitted'])) {
+    } else if(isset($_SESSION['service_request_submitted'])) {
       unset($_SESSION['service_request_submitted']);
 
       echo "
@@ -53,7 +49,20 @@
           <p class='toast-alert-body'>Thank you for your request. You will receive offers shortly!</p>
         </div>
         ";
+    } else if(isset($_SESSION['account_deleted'])) {
+      unset($_SESSION['account_deleted']);
+
+      echo "
+        <div class='toast-alert'>
+          <p class='toast-alert-header'>Success</p> 
+          <p class='toast-alert-body'>Your account have been deleted!</p>
+        </div>
+        ";
     }
+  ?>
+
+  <?php
+    
   ?>
 
   <!-- End of Toasts -->

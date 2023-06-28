@@ -45,6 +45,10 @@
           <img
             src="<?php if($_SESSION['my_account_info']['profile_picture'] === '') { echo "./images/client_profile_pictures/avatar.png"; } else { echo "./images/client_profile_pictures/" . $_SESSION['my_account_info']['username'] . "/" . $_SESSION['my_account_info']['profile_picture']; } ?>"
             title="<?php echo $_SESSION['my_account_info']['username'] ?>" />
+
+          <div class="my-account-pic-wrapper-delete-btn-wrapper">
+            <button class="btn btn-danger" onclick="onDeleteAccontClick()">Delete account</button>
+          </div>
         </div>
       </div>
 
@@ -118,6 +122,23 @@
     include("./views/footer.php")
   ?>
   <!-- ------ -->
+
+  <?php 
+    echo "
+      <script>
+        function onDeleteAccontClick() {
+          let text;
+          if (confirm('Are you sure you want to delete your account?') == true) {";
+            $client_id = $_SESSION['my_account_info']['client_id'];
+            echo "
+            window.open('./process/process_delete_account.php?client_id=$client_id', '_self');
+          }
+        }
+      </script>
+    ";
+  ?>
+
+
 </body>
 
 </html>

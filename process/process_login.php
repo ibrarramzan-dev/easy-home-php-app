@@ -21,6 +21,11 @@
     
     $row = mysqli_fetch_array($results);
 
+    if($row['is_deleted'] == 1) {
+      $_SESSION['account_was_deleted'] = TRUE;
+      echo "<script>window.open('../login.php', '_self')</script>";
+    }
+
     $my_account_info = array("client_id" => $row['client_id'], "first_name" => $row['first_name'], "last_name" => $row['last_name'], "username" => $row['username'], "email" => $row['email'], "phone" => $row['phone'], "address" => $row['address'], "profile_picture" => $row['profile_picture'], "extra_info" => $row['extra_info']);
     $_SESSION['my_account_info'] = $my_account_info;
 

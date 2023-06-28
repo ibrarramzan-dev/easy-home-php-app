@@ -516,6 +516,11 @@ hr {
   height: 100%;
   border-radius: 80px;
 }
+.my-account-pic-wrapper-delete-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
 .c-my-account {
   width: 60%;
   padding-left: 35px;

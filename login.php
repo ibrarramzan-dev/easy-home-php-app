@@ -70,7 +70,12 @@
 
             <?php
                 if(isset($_SESSION['WRONG_CLIENT_CREDENTIALS'])) {
+                  unset($_SESSION['WRONG_CLIENT_CREDENTIALS']);
                   echo "<p class='error-text'>Wrong credentials provided, please try again</p>";
+                }
+                if(isset($_SESSION['account_was_deleted'])) {
+                  unset($_SESSION['account_was_deleted']);
+                  echo "<p class='error-text'>This account was deleted</p>";
                 }
             ?>
 

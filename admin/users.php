@@ -16,7 +16,7 @@
   <div class="content-wrap">
 
     <?php
-      $select_clients_query = "select * from clients WHERE extra_info = 1";
+      $select_clients_query = "select * from clients WHERE extra_info = 1 AND is_deleted = 0";
 
       $results = mysqli_query($conn, $select_clients_query);
 
