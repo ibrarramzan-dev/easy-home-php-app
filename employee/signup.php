@@ -58,7 +58,7 @@
                   <label for="password">Password</label>
                   <input type="password" class="form-control" placeholder="Enter your password" id="password"
                     name="password" pattern="^(?=.*[\w])(?=.*[\W])[\w\W]{8,}$"
-                    title="At least one lowercase, one uppercase, one digit, one special character and 8 characters long"
+                    title="At least one lowercase, one uppercase, one special character and 8 characters long"
                     maxlength="32" required />
                 </div>
 

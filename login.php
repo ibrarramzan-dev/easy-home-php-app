@@ -98,7 +98,8 @@
                   <div class=" control__indicator">
                   </div>
                 </label>
-                <span class="ml-auto"><a href="./forgot_password.php" class="forgot-pass">Forgot Password</a></span>
+                <span class="ml-auto" style="width: 150px;"><a href="./forgot_password.php" class="forgot-pass">Forgot
+                    Password</a></span>
               </div>
 
               <input type="submit" value="Log In" class="btn btn-block btn-primary" style="margin-top: -25px;" />

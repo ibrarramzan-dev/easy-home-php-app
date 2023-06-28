@@ -144,29 +144,32 @@
   </div>
 
   <!-- Avantaje -->
-  <div id="avantaje"></div>
-  <br>
-  <div class=" avantaje entry">
-    <img class="avantaje-img" src="images/transparenta.png" alt="pretul corect">
-    <p class="avantaje-t">Pretul corect</p>
-    <p class="avantaje-p">Primesti in cateva minute oferta personalizata</p>
-  </div>
-  <div class="entry">
-    <img class="avantaje-img" src="images/economiseste.png" alt="economiseste timp">
-    <p class="avantaje-t">Economiseste timp</p>
-    <p class="avantaje-p">Nu pierde timp verificând referințe de la prieteni și familie, astfel economisesti timp pentru
-      a-l petrece cu cei dragi.</p>
-  </div>
-  <div class="entry">
-    <img class="avantaje-img" src="images/incredere.png" alt="ai incredere">
-    <p class="avantaje-t">Ai incredere</p>
-    <p class="avantaje-p">Ne asiguram ca lucrarea ta se desfasoara fara probleme.</p>
-  </div>
-  <div class="entry">
-    <img class="avantaje-img" src="images/simplu.png" alt="simplu de folosit">
-    <p class="avantaje-t">Simplu de folosit</p>
-    <p class="avantaje-p">Durează doar un minut să răspunzi întrebărilor pentru serviciul căutat și trimiți cererea
-      foarte ușor.</p>
+  <div style="display: flex; justify-content: center;">
+    <div id="avantaje"></div>
+    <br>
+    <div class=" avantaje entry">
+      <img class="avantaje-img" src="images/transparenta.png" alt="pretul corect">
+      <p class="avantaje-t">Pretul corect</p>
+      <p class="avantaje-p">Primesti in cateva minute oferta personalizata</p>
+    </div>
+    <div class="entry">
+      <img class="avantaje-img" src="images/economiseste.png" alt="economiseste timp">
+      <p class="avantaje-t">Economiseste timp</p>
+      <p class="avantaje-p">Nu pierde timp verificând referințe de la prieteni și familie, astfel economisesti timp
+        pentru
+        a-l petrece cu cei dragi.</p>
+    </div>
+    <div class="entry">
+      <img class="avantaje-img" src="images/incredere.png" alt="ai incredere">
+      <p class="avantaje-t">Ai incredere</p>
+      <p class="avantaje-p">Ne asiguram ca lucrarea ta se desfasoara fara probleme.</p>
+    </div>
+    <div class="entry">
+      <img class="avantaje-img" src="images/simplu.png" alt="simplu de folosit">
+      <p class="avantaje-t">Simplu de folosit</p>
+      <p class="avantaje-p">Durează doar un minut să răspunzi întrebărilor pentru serviciul căutat și trimiți cererea
+        foarte ușor.</p>
+    </div>
   </div>
 
   <br>
