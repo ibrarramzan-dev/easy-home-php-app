@@ -114,7 +114,7 @@
           $service_name = str_replace(' ', '_', $product_name);
 
           echo "
-            <div class='col p-3 bg-primary text-white'>
+            <div class='col-4 p-3 bg-primary text-white'>
               <p class='align'>$index</p>
             
               <div class='center-picture'>

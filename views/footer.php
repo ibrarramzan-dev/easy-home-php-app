@@ -25,6 +25,11 @@
         </li>
         <li class="li_f"><a class="a_f" href="#contact">Contact</a>
         </li>
+        <li>
+          <hr />
+        </li>
+        <li class="li_f"><a class="a_f" href="./employee" target="_blank">Employee Login</a>
+        </li>
         <li class="li_f"><a class="a_f" href="./admin" target="_blank">Admin Login</a>
         </li>
       </ul>

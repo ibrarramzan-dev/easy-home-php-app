@@ -80,8 +80,8 @@
           <div class="form-group" style="position: relative;">
             <label for="phone">Phone</label>
             <input type="text" class="form-control" placeholder="Your Phone Number" id="phone" name="phone"
-              value="<?php echo $_SESSION['my_account_info']['phone'] ?>" pattern="\d{12}"
-              title="Allowed is 12 digits number" maxlength="12" style="padding-left: 23.5px;"
+              value="<?php echo $_SESSION['my_account_info']['phone'] ?>" pattern="\d{10}"
+              title="Allowed is 10 digits number" maxlength="10" style="padding-left: 23.5px;"
               value="<?php echo $_SESSION['my_account_info']['phone'] ?>" required />
             <span style="position: absolute; top: 43px; left: 10px; font-size: 17px">+</span>
           </div>
