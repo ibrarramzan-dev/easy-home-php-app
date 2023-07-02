@@ -82,14 +82,32 @@
                   <th scope='row'>$order_id</th>
                   <td><u><a href='./view.php?entity=product&entity_id=$product_id' title='View Product' target='_blank'>$product_id</a></u></td>
                   <td><u><a href='./view.php?entity=client&entity_id=$client_id' title='View Client' target='_blank'>$client_id</a></u></td>
-                  <td><u><a href='./view.php?entity=employee&entity_id=$employee_id' title='View Employee' target='_blank'>$employee_id</a></u></td>
+                  <td>";
+                  if($employee_id == 0) {
+                    echo "Pending";
+                  } else {
+                    echo "<u><a href='./view.php?entity=employee&entity_id=$employee_id' title='View Employee' target='_blank'>$employee_id</a></u>";
+                  }
+                  echo "</td>
                   <td>$notes</td>
                   <td>$schedule_date</td>
                   <td>$price</td>
                   <td>$address</td>
-                  <td><u><a href='../images/cere_oferta/$supporting_picture' title='View image' target='_blank'>View Image</a></u></td>
+                  <td>";
+                  if($supporting_picture === '') {
+                    echo "N/A";
+                  } else {
+                    echo "<u><a href='../images/cere_oferta/$supporting_picture' title='View image' target='_blank'>View Image</a></u>";
+                  }
+                  echo "</td>
                   <td>$date</td>
-                  <td>$date_completed</td>
+                  <td>";
+                  if($date_completed === '') {
+                    echo "N/A";
+                  } else {
+                    echo $date_completed;
+                  }
+                  echo "</td>
                 </tr>";
           }
 

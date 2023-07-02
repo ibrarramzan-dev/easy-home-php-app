@@ -82,7 +82,13 @@
                   <td>$email</td>
                   <td>$phone</td>
                   <td>$address</td>
-                  <td><u><a href='../../images/client_profile_pictures/$username/$profile_picture' title='View image' target='_blank'>View Image</a></u></td>
+                  <td>";
+                  if($profile_picture === '') {
+                    echo "N/A";
+                  } else {
+                    echo "<u><a href='../../images/client_profile_pictures/$username/$profile_picture' title='View image' target='_blank'>View Image</a></u>";
+                  }
+                  echo "</td>
                   <td>$date_created</td>
                 </tr>";
           }
