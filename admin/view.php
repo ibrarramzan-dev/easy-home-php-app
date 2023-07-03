@@ -27,7 +27,7 @@
         $select_product_query = "select * from products WHERE product_id = '$entity_id'";
         $results = mysqli_query($conn, $select_product_query);
 
-        echo "<h2>Poduct</h2>
+        echo "<h2>Product</h2>
     <div class='col-lg-11'>
       <div class='card'>
         <div class='card-body'>

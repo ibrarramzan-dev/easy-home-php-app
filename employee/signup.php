@@ -71,7 +71,7 @@
                 <div class="form-group" style="position: relative;">
                   <label for="phone">Phone</label>
                   <input type="text" class="form-control" placeholder="Enter your phone" id="phone" name="phone"
-                    pattern="\d{12}" title="Allowed is 12 digits number" maxlength="12" style="padding-left: 23.5px;"
+                    pattern="\d{10}" title="Allowed is 10 digits number" maxlength="10" style="padding-left: 23.5px;"
                     value="<?php if(isset($_SESSION['e_signup_pwd_not_match'])) { echo $_SESSION['e_signup_phone']; } else { echo ''; } ?>"
                     required />
                   <span style="position: absolute; top: 41px; left: 10px; font-size: 17px; color: #424242;">+</span>

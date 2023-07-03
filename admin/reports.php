@@ -23,13 +23,17 @@
       $results = mysqli_query($conn, $select_products_query);
 
       $product_names = [];
-      $stocks = [];
+      $productUsed = [];
+
+      $totalProductsUsed = 0;
+
       while($row = mysqli_fetch_array($results)) {
         $product_name = $row['product_name'];
-        $stock = $row['stock'];
+        $used = $row['used'];
+        $totalProductsUsed = $totalProductsUsed + $used;
 
         array_push($product_names, $product_name);
-        array_push($stocks, $stock);
+        array_push($productUsed, $used);
       }
 
       $products_axis_data = '';
@@ -38,11 +42,14 @@
       }
       $products_axis_data = ltrim($products_axis_data, $products_axis_data[0]);
 
-      $stock_axis_data = '';
-      foreach ($stocks as $stockValue) {
-        $stock_axis_data = "$stock_axis_data, $stockValue";
+      $numOfProducts = mysqli_num_rows($results);
+
+      $products_used_axis_data = '';
+      foreach ($productUsed as $productUsedValue) {
+        $percentageUsed = $productUsedValue / $totalProductsUsed * 100;
+        $products_used_axis_data = "$products_used_axis_data, $percentageUsed";
       }
-      $stock_axis_data = ltrim($stock_axis_data, $stock_axis_data[0]);
+      $products_used_axis_data = ltrim($products_used_axis_data, $products_used_axis_data[0]);
     ?>
 
     <?php
@@ -80,7 +87,7 @@
 
     <div class="reports-wrapper">
       <div class="reports-bar-chart">
-        <p class="reports-chart-heading">Stock of Products available</p>
+        <p class="reports-chart-heading">Products percentage (%) used</p>
         <canvas id="bar-chart"></canvas>
       </div>
       <div class="reports-line-chart">
@@ -103,8 +110,8 @@
     data: {
       labels: [$products_axis_data],
       datasets: [{
-        label: 'Stocks',
-        data: [$stock_axis_data],
+        label: '% used',
+        data: [$products_used_axis_data],
         borderWidth: 1
       }]
     },
