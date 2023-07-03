@@ -15,7 +15,7 @@
     }
   ?>
 
-  <title>Cere Oferta</title>
+  <title>Cere Oferta | Easy Home</title>
 </head>
 
 <body>

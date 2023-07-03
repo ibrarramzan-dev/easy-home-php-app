@@ -8,7 +8,7 @@
     include("./includes/db.php");
   ?>
 
-  <title>Account Recovery</title>
+  <title>Account Recovery | Easy Home</title>
 </head>
 
 <body>

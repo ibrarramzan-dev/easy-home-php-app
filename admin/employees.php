@@ -60,7 +60,7 @@
                   <td>$first_name</td>
                   <td>$last_name</td>
                   <td>$email</td>
-                  <td>$product_id</td>
+                  <td><u><a href='./view.php?entity=product&entity_id=$product_id' title='View Product' target='_blank'>$product_id</a></u></td>
                   <td>$phone</td>
                   <td>$date_created</td>
                   <td>
@@ -118,7 +118,7 @@
                   <td>$first_name</td>
                   <td>$last_name</td>
                   <td>$email</td>
-                  <td>$product_id</td>
+                  <td><u><a href='./view.php?entity=product&entity_id=$product_id' title='View Product' target='_blank'>$product_id</a></u></td>
                   <td>$phone</td>
                   <td>$date_created</td>
                   </td>

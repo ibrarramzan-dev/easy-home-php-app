@@ -41,3 +41,5 @@
 <link href="css/lib/bootstrap.min.css" rel="stylesheet">
 <link href="css/lib/helper.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+
+<title>Employee Panel | Easy Home</title>

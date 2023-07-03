@@ -14,7 +14,7 @@
       }
     }
   ?>
-  <title>About Us</title>
+  <title>About Us | Easy Home</title>
 </head>
 
 <body>

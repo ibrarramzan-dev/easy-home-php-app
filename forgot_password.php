@@ -7,7 +7,7 @@
     include("./views/head.php")
   ?>
 
-  <title>Forgot Password</title>
+  <title>Forgot Password | Easy Home</title>
 </head>
 
 <body>

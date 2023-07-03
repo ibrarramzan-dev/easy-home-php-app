@@ -73,32 +73,34 @@
               </thead>
               <tbody>";
 
-        while($row = mysqli_fetch_array($results)) {
-          $order_id = $row['order_id'];
-          $notes = $row['notes'];
-          $address = $row['address'];
-          $date = $row['date'];
-          $price = $row['price'];
-          $supporting_picture = $row['supporting_picture'];
+        if(mysqli_num_rows($results) > 0) {
+          while($row = mysqli_fetch_array($results)) {
+            $order_id = $row['order_id'];
+            $notes = $row['notes'];
+            $address = $row['address'];
+            $date = $row['date'];
+            $price = $row['price'];
+            $supporting_picture = $row['supporting_picture'];
 
-          echo "<tr>
-                  <th scope='row'>$order_id</th>
-                  <td>$notes</td>
-                  <td>$address</td>
-                  <td>$date</td>
-                  <td><a href='../images/cere_oferta/$supporting_picture' target='_blank'>View Image</a></td>
-                  <td class='color-primary'>$$price</td>
-                  <td>
-                    <a href='./process/process_complete_order.php?order_id=$order_id' title='Mark as Complete'>
-                      <button type='button' class='btn btn-primary'>Complete?</button>                            
-                    </a>
-                  </td>
-                </tr>";
+            echo "<tr>
+                    <th scope='row'>$order_id</th>
+                    <td>$notes</td>
+                    <td>$address</td>
+                    <td>$date</td>
+                    <td><a href='../images/cere_oferta/$supporting_picture' target='_blank'>View Image</a></td>
+                    <td class='color-primary'>$$price</td>
+                    <td>
+                      <a href='./process/process_complete_order.php?order_id=$order_id' title='Mark as Complete'>
+                        <button type='button' class='btn btn-primary'>Complete?</button>                            
+                      </a>
+                    </td>
+                  </tr>";
           }
-
-          echo "</tbody>
-            </table>
-          </div>
+          echo "</tbody></table>";
+        } else {
+          echo "</tbody></table><p class='no-record-found-text'>No record found</p>";
+        }
+          echo "</div>
         </div>
       </div>
     </div>";
@@ -123,27 +125,29 @@
               </thead>
               <tbody>";
 
-        while($row = mysqli_fetch_array($results)) {
-          $order_id = $row['order_id'];
-          $notes = $row['notes'];
-          $address = $row['address'];
-          $date = $row['date'];
-          $price = $row['price'];
-          $supporting_picture = $row['supporting_picture'];
+        if(mysqli_num_rows($results) > 0) {
+          while($row = mysqli_fetch_array($results)) {
+            $order_id = $row['order_id'];
+            $notes = $row['notes'];
+            $address = $row['address'];
+            $date = $row['date'];
+            $price = $row['price'];
+            $supporting_picture = $row['supporting_picture'];
 
-          echo "<tr>
-                  <th scope='row'>$order_id</th>
-                  <td>$notes</td>
-                  <td>$address</td>
-                  <td>$date</td>
-                  <td><a href='../images/cere_oferta/$supporting_picture' target='_blank'>View Image</a></td>
-                  <td class='color-primary'>$$price</td>
-                </tr>";
+            echo "<tr>
+                    <th scope='row'>$order_id</th>
+                    <td>$notes</td>
+                    <td>$address</td>
+                    <td>$date</td>
+                    <td><a href='../images/cere_oferta/$supporting_picture' target='_blank'>View Image</a></td>
+                    <td class='color-primary'>$$price</td>
+                  </tr>";
           }
-
-          echo "</tbody>
-            </table>
-          </div>
+          echo "</tbody></table>";
+        } else {
+          echo "</tbody></table><p class='no-record-found-text'>No record found</p>";
+        }
+          echo "</div>
         </div>
       </div>
     </div>";
@@ -168,43 +172,40 @@
               </thead>
               <tbody>";
 
-        while($row = mysqli_fetch_array($results)) {
-          $order_id = $row['order_id'];
-          $notes = $row['notes'];
-          $address = $row['address'];
-          $date = $row['date'];
-          $price = $row['price'];
-          $supporting_picture = $row['supporting_picture'];
+        if(mysqli_num_rows($results) > 0) {
+          while($row = mysqli_fetch_array($results)) {
+            $order_id = $row['order_id'];
+            $notes = $row['notes'];
+            $address = $row['address'];
+            $date = $row['date'];
+            $price = $row['price'];
+            $supporting_picture = $row['supporting_picture'];
 
-          echo "<tr>
-                  <th scope='row'>$order_id</th>
-                  <td>$notes</td>
-                  <td>$address</td>
-                  <td>$date</td>
-                  <td><a href='../images/cere_oferta/$supporting_picture' target='_blank'>View Image</a></td>
-                  <td class='color-primary'>$$price</td>
-                  <td>
-                    <a href='./process/process_accept_order.php?order_id=$order_id'>
-                      <button type='button' class='btn btn-primary'>Accept</button>                            
-                    </a>
-                  </td>
-                </tr>";
+            echo "<tr>
+                    <th scope='row'>$order_id</th>
+                    <td>$notes</td>
+                    <td>$address</td>
+                    <td>$date</td>
+                    <td><a href='../images/cere_oferta/$supporting_picture' target='_blank'>View Image</a></td>
+                    <td class='color-primary'>$$price</td>
+                    <td>
+                      <a href='./process/process_accept_order.php?order_id=$order_id'>
+                        <button type='button' class='btn btn-primary'>Accept</button>                            
+                      </a>
+                    </td>
+                  </tr>";
           }
-
-          echo "</tbody>
-            </table>
-          </div>
+          echo "</tbody></table>";
+        } else {
+          echo "</tbody></table><p class='no-record-found-text'>No record found</p>";
+        }
+          echo "</div>
         </div>
       </div>
     </div>";
       }
     ?>
-
-
-
-
   </div>
-
 
   <?php
     include('./views/footer_script.php');
