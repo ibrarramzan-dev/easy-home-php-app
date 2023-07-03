@@ -93,6 +93,7 @@
       <div class="reports-line-chart">
         <p class="reports-chart-heading">Orders Placed in Time Range</p>
         <canvas id="line-chart"></canvas>
+        <p style="text-align: center; margin-top: 20.5px; font-size: 12.5px;"><b>Years</b></p>
       </div>
     </div>
   </div>
