@@ -58,6 +58,7 @@
                   <th>Date</th>
                   <th>Status</th>
                   <th>Employee</th>
+                  <th>Cancel</th>
                 </tr>
               </thead>
               <tbody>";
@@ -114,6 +115,7 @@
                   <td>$date</td>
                   <td>$status</td>
                   <td>$employee_name</td>
+                  <td><a href='./process/process_cancel_order.php?order_id=$order_id' style='text-decoration: none;'>🗙</a></td>
                 </tr>";
           }
 
