@@ -58,14 +58,14 @@
           <div class="form-group">
             <label for="first_name">First Name</label>
             <input type="text" class="form-control" placeholder="Your First Name" id="first_name" name="first_name"
-              pattern="[a-zA-Z]{3,20}" title="Allowed is alphabets and no space"
+              pattern="[a-zA-Z]{3,20}" maxlength="20" title="Allowed is alphabets and no space"
               value="<?php echo $_SESSION['my_account_info']['first_name'] ?>" required />
           </div>
 
           <div class="form-group">
             <label for="last_name">Last Name</label>
             <input type="text" class="form-control" placeholder="Your Last Name" id="last_name" name="last_name"
-              pattern="[a-zA-Z]{3,20}" title="Allowed is alphabets and no space"
+              pattern="[a-zA-Z]{3,20}" maxlength="20" title="Allowed is alphabets and no space"
               value="<?php echo $_SESSION['my_account_info']['last_name'] ?>" required />
           </div>
 

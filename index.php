@@ -31,7 +31,7 @@
   <!-- Toasts -->
 
   <?php
-    if(isset($_SESSION['extra_account_info_added'])) {
+    if (isset($_SESSION['extra_account_info_added'])) {
       unset($_SESSION['extra_account_info_added']);
 
       echo "
@@ -40,7 +40,7 @@
           <p class='toast-alert-body'>Account info updated</p>
         </div>
         ";
-    } else if(isset($_SESSION['service_request_submitted'])) {
+    } else if (isset($_SESSION['service_request_submitted'])) {
       unset($_SESSION['service_request_submitted']);
 
       echo "
@@ -49,13 +49,22 @@
           <p class='toast-alert-body'>Thank you for your request. You will receive offers shortly!</p>
         </div>
         ";
-    } else if(isset($_SESSION['account_deleted'])) {
+    } else if (isset($_SESSION['account_deleted'])) {
       unset($_SESSION['account_deleted']);
 
       echo "
         <div class='toast-alert'>
           <p class='toast-alert-header'>Success</p> 
           <p class='toast-alert-body'>Your account have been deleted!</p>
+        </div>
+        ";
+    } else if (isset($_SESSION['contact_query_inserted'])) {
+      unset($_SESSION['contact_query_inserted']);
+
+      echo "
+        <div class='toast-alert'>
+          <p class='toast-alert-header'>Success</p> 
+          <p class='toast-alert-body'>Query submitted, we'll get in touch!</p>
         </div>
         ";
     }
@@ -181,28 +190,31 @@
   <div class="grid-container-element">
     <h2 id="text-contact">Contacteaza-ne</h2>
     <div class="grid-child-element1">
-      <form class="form" action="" method="">
+      <form class="form" action="./process/process_contact_form.php" method="POST">
         <div class="div-margin">
           <label for="name">Nume</label>
-          <input type="text" name="name" id="name" placeholder="Introduceti numele">
+          <input type="text" name="name" id="name" placeholder="Introduceti numele" pattern="[a-zA-Z]{6, 40}"
+            minLength="3" maxlength="40" title="Allowed is alphabets and space" required>
         </div>
         <div class="div-margin">
           <label for="email">Email</label>
-          <input type="email" name="Email" id="email" placeholder="adresa de email">
+          <input type="email" name="email" id="email" placeholder="adresa de email" maxlength="255" required>
         </div>
         <div class="div-margin">
-          <label for="number">Telefon</label>
-          <input type="tel" name="Number" id="number" placeholder="numarul de telefon">
+          <label for="phone">Telefon</label>
+          <input type="tel" name="phone" id="phone" pattern="\d{10}" title="Allowed is 10 digits number" maxlength="10"
+            placeholder="numarul de telefon" required>
         </div>
         <div class="div-margin">
           <label for="subiect">Subiect</label>
-          <input type="text" name="Email" id="subiect" placeholder="Introduceti subiectul">
+          <input type="text" name="subject" id="subiect" pattern="[a-zA-Z]{5, 100}" minlength="5" maxlength="100"
+            title="Allowed is alphabets and space" placeholder="Introduceti subiectul" required>
         </div>
     </div>
     <div class="grid-child-element2">
       <label for="description">Detalii</label>
-      <textarea name="description" id="description" cols="30" rows="10"
-        placeholder="Introduceti textul aici..."></textarea>
+      <textarea name="description" name="description" id="description" cols="30" rows="10"
+        placeholder="Introduceti textul aici..." minlength="20" maxlength="2000" required></textarea>
     </div>
     <div class="center-button">
       <button class="button-style2">Trimite</button>
